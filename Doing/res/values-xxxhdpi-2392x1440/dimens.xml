@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- for galaxy Note4,1440*2560pix,360*640dip  density=4 -->
+    <!-- for nexus 6,     1440*2392pix,411*683dip density=3.5 -->
+
+    <dimen name="door_header_item_image_height">87dp</dimen>
+    
+    <dimen name="homepage_card_banner_h">112dp</dimen>
+    <dimen name="my_user_inform_height">128dp</dimen>
+    
+    <dimen name="my_user_margin_height">145.5dp</dimen>
+    <dimen name="sort_header_item_height">96dp</dimen>
+    <dimen name="sort_item_height_single_line">42.6dp</dimen>
+    <dimen name="sort_item_height_double_line">85.3dp</dimen>
+    
+    <dimen name="indicator_to_top_title">172dp</dimen>
+    <dimen name="indicator_to_top_banner">112dp</dimen>
+    <dimen name="indicator_to_top_hottype">60dp</dimen>
+    <dimen name="indicator_to_top_hottype_3">122dp</dimen>
+
+</resources>

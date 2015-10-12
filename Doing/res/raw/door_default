@@ -1,0 +1,119 @@
+{
+    "door_header": [
+    	
+        {
+            "id": 16,
+            "type": "按摩",
+            "title": "专业技师到家服务",
+			"count_name": "anmo",
+            "img_name":"local_door_massage",
+            "dest_url": "http://360life.diandao.org/api/QihuShenBian/selCity?&utm_source=disanfang&utm_medium=360_haosou" 
+        },
+		{
+            "id": 5,
+            "type": "洗车",
+            "title": "上门服务，免排队",
+			"count_name": "xiche",
+            "img_name":"local_door_car",
+            "dest_url": "http://3g.ganji.com/bj_clife/pub/"
+        },	
+		{
+            "id": 13,
+            "type": "搬家",
+            "title": "快速预约，统一低价",
+			"count_name": "banjia",
+            "img_name":"local_door_move",
+            "dest_url": "http://sta.ganji.com/ng/app/client/common/index.html?ca_s=fangxinfuwu&ca_n=360&ca_i=1&ca_kw=#app/fuwu/client/banjia/view/customer/index_page.js?city="
+        },
+		{
+            "id": 10,
+            "type": "代驾",
+            "title": "酒桌扶起，送到家门",
+			"count_name": "daijia",
+            "img_name":"local_door_drive",
+            "dest_url": "http://m.weidaijia.cn/mx/?source=360"
+        }		
+],
+   "door_cates":[
+    	{
+            "id": 0,
+            "type": "美食外卖",
+            "title": "外卖订餐",
+			"count_name": "meishi",
+            "img_name":"local_door_food",
+            "dest_url": "360around://com.qihoo.around.takeout/?keyword=订外卖"
+        },
+		{
+            "id": 0,
+            "type": "新鲜美食",
+            "title": "水果/生鲜/零食",
+			"count_name": "xinxian",
+            "img_name":"local_door_xinxian",
+            "dest_url": "http://m.beequick.cn/?tn=360shenghuo"
+        },
+    	{
+            "id": 0,
+            "type": "上门按摩",
+            "title": "按摩理疗",
+			"count_name": "baojian",
+            "img_name":"local_door_baojian",
+            "dest_url": "http://m.map.haosou.com/orders/#scene=shangmen_anmo"
+        },
+		{
+            "id": 0,
+            "type": "美容化妆",
+            "title": "美容/美甲/化妆",
+			"count_name": "cosmetology",
+            "img_name":"local_door_face",
+            "dest_url": "http://m.map.haosou.com/orders/#scene=shangmen_beauty"
+        },
+    	{
+            "id": 0,
+            "type": "电器维修",
+            "title": "手机/电脑/家电",
+			"count_name": "weixiu",
+            "img_name":"local_door_fix",
+            "dest_url": "http://m.map.haosou.com/orders/#scene=shangmen_fix"
+        },
+    	{
+            "id": 25,
+            "type": "送药上门",
+            "title": "一小时送达",
+			"count_name": "yiliao",
+            "img_name":"local_door_medicine",
+            "dest_url": "http://medicinepower.cn/web_client/haosou"
+        },
+		{
+            "id": 18,
+            "type": "节日礼品",
+            "title": "鲜花/蛋糕/礼物",
+			"count_name": "lipin",
+            "img_name":"local_door_gift",
+            "dest_url": "http://m.shengri.cn/~qh_hs/"
+        },		
+		{
+            "id": 0,
+            "type": "汽车服务",
+            "title": "洗车/保养",
+			"count_name": "qiche",
+            "img_name":"local_door_wash",
+            "dest_url": "http://m.map.haosou.com/orders/#scene=shangmen_car"
+        },
+		{
+            "id": 0,
+            "type": "家政服务",
+            "title": "搬家/保洁/做饭",
+			"count_name": "jiazheng",
+            "img_name":"local_door_home",
+            "dest_url": "http://m.map.haosou.com/orders/#scene=shangmen_fuwu"
+        },
+		{
+            "id": 0,
+            "type": "用车出行",
+            "title": "打车/代驾/陪练",
+			"count_name": "chuxing",
+            "img_name":"local_door_goout",
+            "dest_url": "http://m.map.haosou.com/orders/#scene=shangmen_drive"
+        }
+]
+}

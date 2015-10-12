@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/result_error_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout 
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_centerHorizontal="true"
+    	android:layout_marginTop="80dp"
+    	android:orientation="vertical">
+	    <ImageView
+	        android:id="@+id/img_err_bg"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:scaleType="center"
+	        android:src="@drawable/result_err_bg" />
+	
+	    
+
+	    <TextView
+	        android:id="@+id/txt_content"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:layout_marginBottom="20dp"
+	        android:textColor="@color/card_text1"
+	        android:layout_marginTop="15dp"
+	        android:layout_gravity="center_horizontal"
+	        android:text="@string/net_error" />
+	    
+	    <RelativeLayout
+	        android:id="@+id/layout_1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:gravity="center">
+	
+	        <TextView
+	            android:id="@+id/txt_conn_err"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/card_text5"
+	            android:textSize="18sp"
+	            android:text="@string/net_err" />
+	
+	        <TextView
+	            android:id="@+id/txt_input_err"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/input_url_err"
+	            android:layout_marginTop="5dp"
+	            android:textColor="@color/card_text5"
+	            android:textSize="18sp"
+	            android:layout_below="@+id/txt_conn_err" />
+	
+	        <TextView
+	            android:id="@+id/txt_setting_net"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/setting_net"
+	            android:layout_toRightOf="@+id/txt_conn_err"
+	            android:paddingLeft="5dp"
+	            android:paddingRight="10dp"
+	            android:textColor="@color/searchtype_tab_focus_color"
+	            android:textSize="18sp"
+	            android:clickable="true" />
+	    </RelativeLayout>
+	    <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_marginTop="30dp">
+	
+	        <TextView
+	            android:id="@+id/btn_refresh"
+	            android:layout_width="100dp"
+	            android:layout_height="wrap_content"
+	            android:text="@string/refresh"
+	            android:gravity="center"
+	            android:textSize="18sp"
+	            android:textColor="@color/white"
+	            android:background="@drawable/card_loading_fail_btn_bg" />
+
+	    </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

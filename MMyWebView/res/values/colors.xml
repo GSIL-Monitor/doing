@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="searchtype_tab_focus_color">#ff6600</color>
+    <color name="card_text5">#999</color>
+    <color name="card_text1">#666</color>
+</resources>

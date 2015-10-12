@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MAroundPublic</string>
+	<string name="no_function_can_open_this_file">没有找到打开此文件对应的应用</string>
+</resources>

@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.qihoo.around.corejar">
+    <uses-sdk android:minSdkVersion="8"/>
+    <application />
+</manifest>

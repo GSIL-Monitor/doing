@@ -1,0 +1,28 @@
+{
+    "navi3": [
+			{
+				"id": 0,
+				"name":"找美食",
+				"dest_url":"360around://com.qihoo.around.meishi/?keyword=%E9%A4%90%E5%8E%85",
+				"img_name":"local_navi_food"
+			},
+			{
+				"id": 0,
+				"name":"看电影",
+				"dest_url":"360around://com.qihoo.around.movie/?keyword=hot",
+				"img_name":"local_navi_movie"
+			},
+			{
+				"id": 0,
+				"name":"住酒店",
+				"dest_url":"360around://com.qihoo.around.hotel/?keyword=%E9%85%92%E5%BA%97",
+				"img_name":"local_navi_hotel"
+			},
+			{
+				"id": 0,
+				"name":"团购",
+				"dest_url":"360around://com.qihoo.around.groupon/?keyword=%E5%9B%A2%E8%B4%AD%E5%95%86%E6%88%B7", 
+				"img_name":"local_navi_tuan"
+			}
+	]
+}

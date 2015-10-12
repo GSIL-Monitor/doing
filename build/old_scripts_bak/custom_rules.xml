@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom_rules" default="release">
+<target name="-pre-compile">
+    <echo message="JARPATH=${toString:project.all.jars.path}"></echo>
+
+    <property name="thridlib.dir" value="${D:/workspace/MSearch/}/thrlib"></property>
+    <path id="ormlite.lib">
+        <path path="${toString:project.all.jars.path}"></path>
+        <pathelement location="D:/workspace/MSearch/thrlib/gson-2.2.4.jar"></pathelement>
+        <!--  <pathelement location="D:/workspace/MSearch/thrlib/ormlite-android-4.45-sources.jar"></pathelement>-->
+        <pathelement location="D:/workspace/MSearch/thrlib/ormlite-android-4.45.jar"></pathelement>
+        <!--  <pathelement location="D:/workspace/MSearch/thrlib/ormlite-core-4.45-sources.jar"></pathelement>-->
+        <pathelement location="D:/workspace/MSearch/thrlib/ormlite-core-4.45.jar"></pathelement>
+        <!--<pathelement location="D:/workspace/MSearch/thrlib/pushclient_source.jar"></pathelement>-->
+        <pathelement location="D:/workspace/MSearch/thrlib/pushclient.jar"></pathelement>
+    </path>
+    <path id="project.all.jars.path">
+        <path refid="ormlite.lib"></path>
+    </path>
+
+    <echo message="JARPATH=${toString:project.all.jars.path}"></echo>
+</target>
+</project>
+
+

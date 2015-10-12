@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">JsBridge</string>
+    <string name="button_name">Java调用Web</string>
+    <string name="card_text_loading_fail">卡片加载失败，刷新重新加载</string>
+    <string name="card_text_loading">加载中...</string>
+    <string name="refresh">刷新</string>
+    <string name="back">返回</string>
+    <string name="net_error">内容加载失败啦！</string>
+    <string name="net_err">&#8226; 网络连接异常,</string>
+    <string name="input_url_err">&#8226; 网站暂时出现故障</string>
+    <string name="setting_net">设置网络</string>
+</resources>

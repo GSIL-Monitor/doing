@@ -1,0 +1,672 @@
+[
+    {
+        "base_bean": [
+            {
+                "items": [
+                    {
+                        "item_name": "全部",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "美食",
+                        "item_param": "美食"
+                    },
+                    {
+                        "item_name": "电影院",
+                        "item_param": "电影院"
+                    },
+                    {
+                        "item_name": "酒店",
+                        "item_param": "酒店"
+                    }
+                ],
+                "title_field": "keyword",
+                "title_name": "类别",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "不限",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "500米",
+                        "item_param": "500"
+                    },
+                    {
+                        "item_name": "1千米",
+                        "item_param": "1000"
+                    },
+                    {
+                        "item_name": "2千米",
+                        "item_param": "2000"
+                    },
+                    {
+                        "item_name": "5千米",
+                        "item_param": "5000"
+                    }
+                ],
+                "title_field": "range",
+                "title_name": "范围",
+                "default_item": 0
+            }
+        ],
+        "use_name": "团购",
+        "maxValue": 0,
+        "minValue": 0,
+        "filterNo": -1
+    },
+    {
+        "base_bean": [
+            {
+                "items": [
+                    {
+                        "item_name": "智能排序",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "离我最近",
+                        "item_param": "distance&order=asc"
+                    },
+                    {
+                        "item_name": "评分最高",
+                        "item_param": "rate&order=desc"
+                    },
+                    {
+                        "item_name": "人气最高",
+                        "item_param": "review_count&order=desc"
+                    },
+                    {
+                        "item_name": "人均最低",
+                        "item_param": "price&order=asc"
+                    },
+                    {
+                        "item_name": "人均最高",
+                        "item_param": "price&order=desc"
+                    }
+                ],
+                "title_field": "sort",
+                "title_name": "排序",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "不限",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "川菜",
+                        "item_param": "川菜"
+                    },
+                    {
+                        "item_name": "湘菜",
+                        "item_param": "湘菜"
+                    },
+                    {
+                        "item_name": "粤菜",
+                        "item_param": "粤菜"
+                    },
+                    {
+                        "item_name": "云南菜",
+                        "item_param": "云南菜"
+                    },
+                    {
+                        "item_name": "东北菜",
+                        "item_param": "东北菜"
+                    },
+                    {
+                        "item_name": "江浙菜",
+                        "item_param": "江浙菜"
+                    },
+                    {
+                        "item_name": "火锅",
+                        "item_param": "火锅"
+                    },
+                    {
+                        "item_name": "海鲜",
+                        "item_param": "海鲜"
+                    },
+                    {
+                        "item_name": "快餐",
+                        "item_param": "快餐"
+                    },
+                    {
+                        "item_name": "自助餐",
+                        "item_param": "自助餐"
+                    },
+                    {
+                        "item_name": "家常菜",
+                        "item_param": "家常菜"
+                    },
+                    {
+                        "item_name": "清真菜",
+                        "item_param": "清真菜"
+                    },
+                    {
+                        "item_name": "西餐",
+                        "item_param": "西餐"
+                    },
+                    {
+                        "item_name": "日本料理",
+                        "item_param": "日本料理"
+                    },
+                    {
+                        "item_name": "韩国料理",
+                        "item_param": "韩国料理"
+                    },
+                    {
+                        "item_name": "东南亚菜",
+                        "item_param": "东南亚菜"
+                    },
+                    {
+                        "item_name": "面包甜点",
+                        "item_param": "面包甜点"
+                    }
+                ],
+                "title_field": "keyword",
+                "title_name": "类别",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "不限",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "500米",
+                        "item_param": "500"
+                    },
+                    {
+                        "item_name": "1千米",
+                        "item_param": "1000"
+                    },
+                    {
+                        "item_name": "2千米",
+                        "item_param": "2000"
+                    },
+                    {
+                        "item_name": "5千米",
+                        "item_param": "5000"
+                    }
+                ],
+                "title_field": "range",
+                "title_name": "范围",
+                "default_item": 4
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "有团购",
+                        "item_param": "groupon",
+                        "local_image": "filtration_groupon"
+                    },
+                    {
+                        "item_name": "可排号",
+                        "item_param": "no-wait",
+                        "local_image": "filtration_no_wait"
+                    },
+                    {
+                        "item_name": "优惠活动",
+                        "item_param": "creditcard",
+                        "local_image": "filtration_coupon"
+                    }
+                ],
+                "title_field": "filter",
+                "title_name": "筛选",
+                "default_item": -1
+            }
+        ],
+        "use_name": "美食",
+        "maxValue": 300,
+        "minValue": 0,
+        "filterNo": 3
+    },
+    {
+        "base_bean": [
+            {
+                "items": [
+                    {
+                        "item_name": "不限",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "1千米",
+                        "item_param": "1000"
+                    },
+                    {
+                        "item_name": "3千米",
+                        "item_param": "3000"
+                    },
+                    {
+                        "item_name": "5千米",
+                        "item_param": "5000"
+                    },
+                    {
+                        "item_name": "10千米",
+                        "item_param": "10000"
+                    }
+                ],
+                "title_field": "range",
+                "title_name": "范围",
+                "default_item": 4
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "智能排序",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "离我最近",
+                        "item_param": "distance&order=asc"
+                    }
+                ],
+                "title_field": "sort",
+                "title_name": "排序",
+                "default_item": 0
+            }
+        ],
+        "use_name": "休闲",
+        "maxValue": 0,
+        "minValue": 0,
+        "filterNo": -1
+    },
+    {
+        "base_bean": [
+            {
+                "items": [
+                    {
+                        "item_name": "不限",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "1千米",
+                        "item_param": "1000"
+                    },
+                    {
+                        "item_name": "3千米",
+                        "item_param": "3000"
+                    },
+                    {
+                        "item_name": "5千米",
+                        "item_param": "5000"
+                    },
+                    {
+                        "item_name": "10千米",
+                        "item_param": "10000"
+                    }
+                ],
+                "title_field": "range",
+                "title_name": "范围",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "智能排序",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "离我最近",
+                        "item_param": "distance&order=asc"
+                    },
+                    {
+                        "item_name": "评分最高",
+                        "item_param": "rate&order=desc"
+                    }
+                ],
+                "title_field": "sort",
+                "title_name": "排序",
+                "default_item": 0
+            }
+        ],
+        "use_name": "景点",
+        "maxValue": 0,
+        "minValue": 0,
+        "filterNo": -1
+    },
+    {
+        "base_bean": [
+            {
+                "items": [
+                    {
+                        "item_name": "不限",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "1千米",
+                        "item_param": "1000"
+                    },
+                    {
+                        "item_name": "3千米",
+                        "item_param": "3000"
+                    },
+                    {
+                        "item_name": "5千米",
+                        "item_param": "5000"
+                    },
+                    {
+                        "item_name": "10千米",
+                        "item_param": "10000"
+                    }
+                ],
+                "title_field": "range",
+                "title_name": "范围",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "智能排序",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "离我最近",
+                        "item_param": "distance&order=asc"
+                    }
+                ],
+                "title_field": "sort",
+                "title_name": "排序",
+                "default_item": 0
+            }
+        ],
+        "use_name": "文化",
+        "maxValue": 0,
+        "minValue": 0,
+        "filterNo": -1
+    },
+    {
+        "base_bean": [
+            {
+                "items": [
+                    {
+                        "item_name": "综合排序",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "离我最近",
+                        "item_param": "distance&order=asc"
+                    },
+                    {
+                        "item_name": "价格最低",
+                        "item_param": "price&order=asc"
+                    },
+                    {
+                        "item_name": "评分最高",
+                        "item_param": "rate&order=desc"
+                    }
+                ],
+                "title_field": "sort",
+                "title_name": "排序",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "全部",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "经济型",
+                        "item_param": "0,3"
+                    },
+                    {
+                        "item_name": "舒适型",
+                        "item_param": "3"
+                    },
+                    {
+                        "item_name": "高档型",
+                        "item_param": "4"
+                    },
+                    {
+                        "item_name": "豪华型",
+                        "item_param": "5"
+                    }
+                ],
+                "title_field": "star",
+                "title_name": "等级",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "有wifi",
+                        "item_param": "wifi"
+                    },
+                    {
+                        "item_name": "可停车",
+                        "item_param": "park"
+                    },
+                    {
+                        "item_name": "钟点房",
+                        "item_param": "hour"
+                    },
+                    {
+                        "item_name": "临近地铁",
+                        "item_param": "near_subway"
+                    },
+                    {
+                        "item_name": "有团购",
+                        "item_param": "groupon"
+                    }
+                ],
+                "title_field": "filter",
+                "title_name": "筛选",
+                "default_item": -1
+            }
+        ],
+        "use_name": "酒店",
+        "maxValue": 800,
+        "minValue": 0,
+        "filterNo": 2
+    },
+    {
+        "base_bean": [
+            {
+                "items": [
+                    {
+                        "item_name": "综合排序",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "离我最近",
+                        "item_param": "distance&order=asc"
+                    },
+                    {
+                        "item_name": "价格最低",
+                        "item_param": "price&order=asc"
+                    },
+                    {
+                        "item_name": "评分最高",
+                        "item_param": "rate&order=desc"
+                    }
+                ],
+                "title_field": "sort",
+                "title_name": "排序",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "全部",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "经济型",
+                        "item_param": "0,3"
+                    },
+                    {
+                        "item_name": "舒适型",
+                        "item_param": "3"
+                    },
+                    {
+                        "item_name": "高档型",
+                        "item_param": "4"
+                    },
+                    {
+                        "item_name": "豪华型",
+                        "item_param": "5"
+                    }
+                ],
+                "title_field": "star",
+                "title_name": "等级",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "有wifi",
+                        "item_param": "wifi"
+                    },
+                    {
+                        "item_name": "可停车",
+                        "item_param": "park"
+                    },
+                    {
+                        "item_name": "钟点房",
+                        "item_param": "hour"
+                    },
+                    {
+                        "item_name": "临近地铁",
+                        "item_param": "near_subway"
+                    },
+                    {
+                        "item_name": "有团购",
+                        "item_param": "groupon"
+                    }
+                ],
+                "title_field": "filter",
+                "title_name": "筛选",
+                "default_item": 4
+            }
+        ],
+        "use_name": "钟点房",
+        "maxValue": 800,
+        "minValue": 0,
+        "filterNo": 2
+    },
+    {
+        "base_bean": [
+            {
+                "items": [
+                    {
+                        "item_name": "智能排序",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "送餐最快",
+                        "item_param": "avg_shipping_time"
+                    },
+                    {
+                        "item_name": "评分最高",
+                        "item_param": "food_avg_score"
+                    },
+                    {
+                        "item_name": "销量最高",
+                        "item_param": "sales"
+                    },
+                    {
+                        "item_name": "起送最低",
+                        "item_param": "min_price"
+                    }
+                ],
+                "title_field": "sort",
+                "title_name": "排序",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "全部",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "中式简餐",
+                        "item_param": "中式简餐"
+                    },
+                    {
+                        "item_name": "家常菜",
+                        "item_param": "家常菜"
+                    },
+                    {
+                        "item_name": "意面披萨",
+                        "item_param": "意面披萨"
+                    },
+                    {
+                        "item_name": "日本料理",
+                        "item_param": "日本料理"
+                    },
+                    {
+                        "item_name": "韩国料理",
+                        "item_param": "韩国料理"
+                    },
+                    {
+                        "item_name": "汉堡三明治",
+                        "item_param": "汉堡三明治"
+                    },
+                    {
+                        "item_name": "米粉米线",
+                        "item_param": "米粉米线"
+                    },
+                    {
+                        "item_name": "东南亚菜",
+                        "item_param": "东南亚菜"
+                    },
+                    {
+                        "item_name": "西餐",
+                        "item_param": "西餐"
+                    },
+                    {
+                        "item_name": "其他",
+                        "item_param": "其他"
+                    }
+                ],
+                "title_field": "category",
+                "title_name": "菜系",
+                "default_item": 0
+            },
+            {
+                "items": [
+                    {
+                        "item_name": "不限",
+                        "item_param": ""
+                    },
+                    {
+                        "item_name": "满减优惠",
+                        "item_param": "6"
+                    },
+                    {
+                        "item_name": "免费配送",
+                        "item_param": "11"
+                    },
+                    {
+                        "item_name": "0元起送",
+                        "item_param": "13"
+                    },
+                    {
+                        "item_name": "满赠优惠",
+                        "item_param": "2"
+                    },
+                    {
+                        "item_name": "支持发票",
+                        "item_param": "15"
+                    },
+                    {
+                        "item_name": "超时赔付",
+                        "item_param": "9"
+                    }
+                ],
+                "title_field": "activity",
+                "title_name": "优惠活动",
+                "default_item": 0
+            }
+        ],
+        "use_name": "外卖",
+        "maxValue": 0,
+        "minValue": 0,
+        "filterNo": -1
+    }
+]

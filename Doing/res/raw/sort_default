@@ -1,0 +1,665 @@
+{
+    "waimai": [
+        {
+            "cityname": "广州"
+        },
+        {
+            "cityname": "珠海"
+        },
+        {
+            "cityname": "济宁"
+        },
+        {
+            "cityname": "南京"
+        },
+        {
+            "cityname": "海口"
+        },
+        {
+            "cityname": "长沙"
+        },
+        {
+            "cityname": "重庆"
+        },
+        {
+            "cityname": "上海"
+        },
+        {
+            "cityname": "宁波"
+        },
+        {
+            "cityname": "杭州"
+        },
+        {
+            "cityname": "郑州"
+        },
+        {
+            "cityname": "银川"
+        },
+        {
+            "cityname": "石家庄"
+        },
+        {
+            "cityname": "乌鲁木齐"
+        },
+        {
+            "cityname": "成都"
+        },
+        {
+            "cityname": "福州"
+        },
+        {
+            "cityname": "西安"
+        },
+        {
+            "cityname": "青岛"
+        },
+        {
+            "cityname": "哈尔滨"
+        },
+        {
+            "cityname": "太原"
+        },
+        {
+            "cityname": "兰州"
+        },
+        {
+            "cityname": "贵阳"
+        },
+        {
+            "cityname": "济南"
+        },
+        {
+            "cityname": "烟台"
+        },
+        {
+            "cityname": "苏州"
+        },
+        {
+            "cityname": "大连"
+        },
+        {
+            "cityname": "武汉"
+        },
+        {
+            "cityname": "长春"
+        },
+        {
+            "cityname": "天津"
+        },
+        {
+            "cityname": "呼和浩特"
+        },
+        {
+            "cityname": "无锡"
+        },
+        {
+            "cityname": "南昌"
+        },
+        {
+            "cityname": "西宁"
+        },
+        {
+            "cityname": "沈阳"
+        },
+        {
+            "cityname": "厦门"
+        },
+        {
+            "cityname": "合肥"
+        },
+        {
+            "cityname": "昆明"
+        },
+        {
+            "cityname": "南宁"
+        },
+        {
+            "cityname": "北京"
+        },
+        {
+            "cityname": "东莞"
+        },
+        {
+            "cityname": "深圳"
+        },
+        {
+            "cityname": "佛山"
+        }
+    ],
+    "subway": [
+        {
+            "cityname": "北京"
+        },
+        {
+            "cityname": "上海"
+        },
+        {
+            "cityname": "广州"
+        },
+        {
+            "cityname": "深圳"
+        },
+        {
+            "cityname": "成都"
+        },
+        {
+            "cityname": "长春"
+        },
+        {
+            "cityname": "重庆"
+        },
+        {
+            "cityname": "大连"
+        },
+        {
+            "cityname": "佛山"
+        },
+        {
+            "cityname": "杭州"
+        },
+        {
+            "cityname": "昆明"
+        },
+        {
+            "cityname": "南京"
+        },
+        {
+            "cityname": "沈阳"
+        },
+        {
+            "cityname": "苏州"
+        },
+        {
+            "cityname": "天津"
+        },
+        {
+            "cityname": "武汉"
+        },
+        {
+            "cityname": "西安"
+        },
+        {
+            "cityname": "哈尔滨"
+        },
+        {
+            "cityname": "郑州"
+        },
+        {
+            "cityname": "长沙"
+        },
+        {
+            "cityname": "宁波"
+        },
+        {
+            "cityname": "无锡"
+        }
+    ],
+    "sort_header": [
+      {
+            "id": 0,
+            "title": "找美食",
+            "img_name":"local_sort_main_food",
+            "dest_url": "360around://com.qihoo.around.meishi/?keyword=%E9%A4%90%E5%8E%85"
+		},
+        {
+            "id": 1,
+            "title": "看电影",
+            "img_name":"local_sort_main_movie",
+            "dest_url": "360around://com.qihoo.around.movie/?keyword=hot"
+        },
+        {
+            "id": "onebox_waimai",
+            "title": "订外卖",
+            "img_name":"local_sort_main_takeout",
+            "dest_url": "360around://com.qihoo.around.takeout/?keyword=订外卖"
+        },
+        {
+            "id": 2,
+            "title": "去唱K",
+            "img_name":"local_sort_main_sing",
+            "dest_url": "360around://com.qihoo.around.relax/?keyword=KTV"
+        },
+        {
+            "id": "subway",
+            "title": "地铁站",
+            "img_name":"local_sort_main_subway",
+            "dest_url": "http://map.haosou.com/app/jump/?url=http%3A%2F%2Fm.map.haosou.com%2Fsubway%2Findex.html"
+        },
+        {
+            "id": 0,
+            "title": "公交站",
+            "img_name":"local_sort_main_bus",
+            "dest_url": "http://m.map.haosou.com/#search/list/keyword=%E5%85%AC%E4%BA%A4%E7%AB%99&_keyword=%E9%99%84%E8%BF%91%E5%85%AC%E4%BA%A4%E7%AB%99"
+        },
+        {
+            "id": 1,
+            "title": "停车场",
+            "img_name":"local_sort_main_park",
+            "dest_url": "360around://com.qihoo.around.life/?keyword=%E5%81%9C%E8%BD%A6%E5%9C%BA"
+        },
+        {
+            "id": 2,
+            "title": "钟点房",
+            "img_name":"local_sort_main_clockroom",
+            "dest_url": "360around://com.qihoo.around.hotelhour/?keyword=%E9%85%92%E5%BA%97"
+        }
+    ],
+    "sort_cates": [
+        {
+            "id": 1,
+            "type": "美食",
+            "color": "#ff9a56",
+            "img_name":"local_sort_food",
+            "count_name":"food",
+            "dest_url": "http://www.baidu.com",
+            "detail": [
+                {
+                    "id": 1,
+                    "title": "川菜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e5%b7%9d%e8%8f%9c"
+                },
+                {
+                    "id": 1,
+                    "title": "火锅",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e7%81%ab%e9%94%85"
+                },
+                {
+                    "id": 1,
+                    "title": "小吃/快餐",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e5%bf%ab%e9%a4%90"
+                },
+                {
+                    "id": 1,
+                    "title": "江浙菜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e6%b1%9f%e6%b5%99%e8%8f%9c"
+                },
+                {
+                    "id": 1,
+                    "title": "云南菜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e4%ba%91%e5%8d%97%e8%8f%9c"
+                },
+                {
+                    "id": 1,
+                    "title": "东南亚菜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e4%b8%9c%e5%8d%97%e4%ba%9a%e8%8f%9c"
+                },
+                {
+                    "id": 1,
+                    "title": "烧烤",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e7%83%a7%e7%83%a4"
+                },
+                {
+                    "id": 1,
+                    "title": "海鲜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e6%b5%b7%e9%b2%9c"
+                },
+                {
+                    "id": 1,
+                    "title": "清真菜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e6%b8%85%e7%9c%9f%e8%8f%9c"
+                },
+                {
+                    "id": 1,
+                    "title": "日本料理",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e6%97%a5%e6%9c%ac%e6%96%99%e7%90%86"                    
+                },
+                {
+                    "id": 1,
+                    "title": "自助餐",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e8%87%aa%e5%8a%a9%e9%a4%90"
+                },
+                {
+                    "id": 1,
+                    "title": "西餐",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e8%a5%bf%e9%a4%90"
+                },
+                {
+                    "id": 1,
+                    "title": "面包甜点",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e9%9d%a2%e5%8c%85%e7%94%9c%e7%82%b9"
+                },
+                {
+                    "id": 1,
+                    "title": "韩国料理",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e9%9f%a9%e5%9b%bd%e6%96%99%e7%90%86"
+                },
+                {
+                    "id": 1,
+                    "title": "鲁菜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%e9%b2%81%e8%8f%9c"
+                },
+                {
+                    "id": 1,
+                    "title": "粤菜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%E7%B2%A4%E8%8F%9C"
+                },
+                {
+                    "id": 1,
+                    "title": "湘菜",
+                    "dest_url": "360around://com.qihoo.around.meishi/?keyword=%E6%B9%98%E8%8F%9C"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "休闲",
+            "color": "#f6837e",
+            "img_name":"local_sort_leisure",
+            "count_name":"casual",
+            "dest_url": "http://www.sina.com",
+            "detail": [
+                {
+                    "id": 1,
+                    "title": "电影院",
+                    "dest_url": "360around://com.qihoo.around.movie/?keyword=around"
+                },
+                {
+                    "id": 1,
+                    "title": "KTV",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=KTV"
+                },
+                {
+                    "id": 1,
+                    "title": "酒吧",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%e9%85%92%e5%90%a7"
+                },
+                {
+                    "id": 1,
+                    "title": "网吧",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E7%BD%91%E5%90%A7"
+                },
+                {
+                    "id": 1,
+                    "title": "咖啡厅",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E5%92%96%E5%95%A1%E5%8E%85"
+                },
+                {
+                    "id": 1,
+                    "title": "茶馆",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E8%8C%B6%E9%A6%86"
+                },
+                {
+                    "id": 1,
+                    "title": "游乐场",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E6%B8%B8%E4%B9%90%E5%9C%BA"
+                },
+                {
+                    "id": 1,
+                    "title": "棋牌室",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E6%A3%8B%E7%89%8C%E5%AE%A4"
+                },
+                {
+                    "id": 1,
+                    "title": "台球馆",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E5%8F%B0%E7%90%83%E9%A6%86"
+                },
+                {
+                    "id": 1,
+                    "title": "手工DIY",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E6%89%8B%E5%B7%A5DIY"
+                },
+                {
+                   "id": 1,
+                    "title": "温泉",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E6%B8%A9%E6%B3%89" 
+                },
+                {
+                    "id": 1,
+                    "title": "桌游吧",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E6%A1%8C%E6%B8%B8%E5%90%A7"
+                },
+                {
+                    "id": 1,
+                    "title": "农家乐",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E5%86%9C%E5%AE%B6%E4%B9%90"
+                },
+                {
+                    "id": 1,
+                    "title": "密室逃脱",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E5%AF%86%E5%AE%A4%E9%80%83%E8%84%B1"
+                },
+                {
+                    "id": 1,
+                    "title": "滑雪",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E6%BB%91%E9%9B%AA"
+                },
+                {
+                    "id": 1,
+                    "title": "真人CS",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E7%9C%9F%E4%BA%BACS"
+                },
+                {
+                    "id": 1,
+                    "title": "保健",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E4%BF%9D%E5%81%A5"
+                },
+                {
+                    "id": 1,
+                    "title": "足疗按摩",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E8%B6%B3%E7%96%97"
+                },
+                {
+                    "id": 1,
+                    "title": "景点",
+                    "dest_url": "360around://com.qihoo.around.scene/?keyword=%E6%99%AF%E7%82%B9"
+                },
+                {
+                    "id": 1,
+                    "title": "公园",
+                    "dest_url": "360around://com.qihoo.around.relax/?keyword=%E5%85%AC%E5%9B%AD"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "丽人",
+            "color": "#b687cf",
+            "img_name":"local_sort_beauty",
+            "count_name":"beauty",
+            "dest_url": "http://www.meizu.com",
+            "detail": [
+                {
+                    "id": 1,
+                    "title": "美容",
+                    "dest_url": "360around://com.qihoo.around.beauty/?keyword=%E7%BE%8E%E5%AE%B9"
+                },
+                {
+                    "id": 1,
+                    "title": "美发",
+                    "dest_url": "360around://com.qihoo.around.beauty/?keyword=%E7%BE%8E%E5%8F%91"
+                },
+                {
+                    "id": 1,
+                    "title": "美甲",
+                    "dest_url": "360around://com.qihoo.around.beauty/?keyword=%E7%BE%8E%E7%94%B2"
+                },
+                {
+                    "id": 1,
+                    "title": "瑜伽",
+                    "dest_url": "360around://com.qihoo.around.beauty/?keyword=%E7%91%9C%E4%BC%BD"
+                },
+                {
+                    "id": 1,
+                    "title": "瘦身纤体",
+                    "dest_url": "360around://com.qihoo.around.beauty/?keyword=%E7%98%A6%E8%BA%AB"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "酒店",
+            "color": "#6fc8c7",
+            "img_name":"local_sort_hotel",
+            "count_name":"hotel",
+            "dest_url": "http://www.meizu.com",
+            "detail": [
+                {
+                    "id": 1,
+                    "title": "豪华型",
+                    "dest_url": "360around://com.qihoo.around.hotel/?keyword=%E9%85%92%E5%BA%97&hotel_style=豪华型"
+                },
+                {
+                    "id": 1,
+                    "title": "高档型",
+                    "dest_url": "360around://com.qihoo.around.hotel/?keyword=%E9%85%92%E5%BA%97&hotel_style=高档型"
+                },
+                {
+                    "id": 1,
+                    "title": "舒适型",
+                    "dest_url": "360around://com.qihoo.around.hotel/?keyword=%E9%85%92%E5%BA%97&hotel_style=舒适型"
+                },
+                {
+                    "id": 1,
+                    "title": "经济型",
+                    "dest_url": "360around://com.qihoo.around.hotel/?keyword=%E9%85%92%E5%BA%97&hotel_style=经济型"
+                },
+                {
+                    "id": 1,
+                    "title": "钟点房",
+                    "dest_url": "360around://com.qihoo.around.hotelhour/?keyword=%E9%85%92%E5%BA%97"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "商业",
+            "color": "#f7857e",
+            "img_name":"local_sort_business",
+            "count_name":"business",
+            "dest_url": "http://www.meizu.com",
+            "detail": [
+                {
+                    "id": 1,
+                    "title": "超市",
+                    "dest_url": "360around://com.qihoo.around.business/?keyword=%E8%B6%85%E5%B8%82"
+                },
+                {
+                    "id": 1,
+                    "title": "商场",
+                    "dest_url": "360around://com.qihoo.around.business/?keyword=%E5%95%86%E5%9C%BA"
+                },
+                {
+                    "id": 1,
+                    "title": "便利店",
+                    "dest_url": "360around://com.qihoo.around.business/?keyword=%E4%BE%BF%E5%88%A9%E5%BA%97"
+                },
+                {
+                    "id": 1,
+                    "title": "药店",
+                    "dest_url": "360around://com.qihoo.around.business/?keyword=%E8%8D%AF%E5%BA%97"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "生活",
+            "color": "#f8845d",
+            "img_name":"local_sort_life",
+            "count_name":"life",
+            "dest_url": "http://www.meizu.com",
+            "detail": [
+                {
+                    "id": 1,
+                    "title": "厕所",
+                    "dest_url": "360around://com.qihoo.around.life/?keyword=%E5%8E%95%E6%89%80"
+                },
+                {
+                    "id": 1,
+                    "title": "银行",
+                    "dest_url": "360around://com.qihoo.around.life/?keyword=%E9%93%B6%E8%A1%8C"
+                },
+                {
+                    "id": 1,
+                    "title": "医院",
+                    "dest_url": "360around://com.qihoo.around.life/?keyword=%E5%8C%BB%E9%99%A2"
+                },
+                {
+                    "id": 1,
+                    "title": "营业厅",
+                    "dest_url": "360around://com.qihoo.around.life/?keyword=%e8%90%a5%e4%b8%9a%e5%8e%85"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "type": "出行",
+            "color": "#8ad4b4",
+            "img_name":"local_sort_out",
+            "count_name":"travel",
+            "dest_url": "http://www.meizu.com",
+            "detail": [
+                {
+                    "id": 1,
+                    "title": "公交站",
+                    "dest_url": "http://m.map.haosou.com/#search/list/keyword=%E5%85%AC%E4%BA%A4%E7%AB%99"
+                },
+                {
+                    "id": "subway",
+                    "title": "地铁站",
+                    "dest_url": "http://map.haosou.com/app/jump/?url=http%3A%2F%2Fm.map.haosou.com%2Fsubway%2Findex.html"
+                },
+                {
+                    "id": 1,
+                    "title": "违章高发",
+                    "dest_url": "http://m.map.haosou.com/#search/map/keyword=%E8%BF%9D%E7%AB%A0%E9%AB%98%E5%8F%91%E5%9C%B0"
+                },
+                {
+                    "id": 1,
+                    "title": "加油站",
+                    "dest_url": "360around://com.qihoo.around.life/?keyword=%E5%8A%A0%E6%B2%B9%E7%AB%99"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "type": "文化",
+            "color": "#d25757",
+            "img_name":"local_sort_culture",
+            "count_name":"culture",
+            "dest_url": "http://www.meizu.com",
+            "detail": [
+                {
+                    "id": 1,
+                    "title": "博物馆",
+                    "dest_url": "360around://com.qihoo.around.culture/?keyword=%E5%8D%9A%E7%89%A9%E9%A6%86"
+                },
+                {
+                    "id": 1,
+                    "title": "美术馆",
+                    "dest_url": "360around://com.qihoo.around.culture/?keyword=%E7%BE%8E%E6%9C%AF%E9%A6%86"
+                },
+                {
+                    "id": 1,
+                    "title": "展览馆",
+                    "dest_url": "360around://com.qihoo.around.culture/?keyword=%E5%B1%95%E8%A7%88%E9%A6%86"
+                },
+                {
+                    "id": 1,
+                    "title": "艺术馆",
+                    "dest_url": "360around://com.qihoo.around.culture/?keyword=%E8%89%BA%E6%9C%AF%E9%A6%86"
+                },
+                {
+                    "id": 1,
+                    "title": "纪念馆",
+                    "dest_url": "360around://com.qihoo.around.culture/?keyword=%E7%BA%AA%E5%BF%B5%E9%A6%86"
+                },
+                {
+                    "id": 1,
+                    "title": "体育场馆",
+                    "dest_url": "360around://com.qihoo.around.culture/?keyword=%E4%BD%93%E8%82%B2%E5%9C%BA%E9%A6%86"
+                },
+                {
+                    "id": 1,
+                    "title": "剧场",
+                    "dest_url": "360around://com.qihoo.around.culture/?keyword=%e5%89%a7%e5%9c%ba"
+                },
+                {
+                    "id": 1,
+                    "title": "图书馆",
+                    "dest_url": "360around://com.qihoo.around.culture/?keyword=%E5%9B%BE%E4%B9%A6%E9%A6%86"
+                }
+            ]
+        }
+    ]
+}

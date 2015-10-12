@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    tools:context=".view.webview.MyBrowserWebView" >
+
+     <com.qihoo.around.mywebview.BridgeWebView
+        android:id="@+id/mywebView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"       
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideInset" />
+
+    <ViewStub
+        android:id="@+id/stub_error_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/result_no_content_page" />
+
+
+    <ProgressBar
+        android:id="@+id/loading_view"
+        style="@style/QihooProgressbarFooter"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/stub_cache"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</merge>

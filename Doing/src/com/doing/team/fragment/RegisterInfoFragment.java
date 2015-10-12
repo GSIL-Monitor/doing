@@ -1,0 +1,249 @@
+package com.doing.team.fragment;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request.Method;
+import com.android.volley.Response;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.doing.team.DoingApplication;
+import com.doing.team.R;
+import com.doing.team.activity.BaseActivity;
+import com.doing.team.activity.DoingActivity;
+import com.doing.team.bean.UploadSuccess;
+import com.doing.team.bean.UserInfo;
+import com.doing.team.eventbus.QEventBus;
+import com.doing.team.eventdefs.ApplicationEvents;
+import com.doing.team.http.HttpManager;
+import com.doing.team.properties.Constant;
+import com.doing.team.util.AESCoder;
+import com.doing.team.util.ImageUtils;
+import com.doing.team.util.MultipartRequest;
+import com.doing.team.util.SharePreferenceHelper;
+import com.doing.team.view.CircleImageView;
+import com.google.gson.Gson;
+import com.qihoo.haosou.msearchpublic.util.LogUtils;
+
+import org.json.JSONObject;
+
+import java.io.File;
+import java.net.URLDecoder;
+import java.util.HashMap;
+import java.util.Map;
+
+public class RegisterInfoFragment extends BaseFragment {
+    private View mView;
+    private EditText nickTv;
+    private EditText ageTv;
+    private EditText professionTv;
+    private TextView confirm;
+    private CircleImageView headImag;
+    private Context mContext;
+    private UserInfo userInfo;
+    private String uploadUrl = "http://123.57.223.85/do/gi";
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        mView = inflater.inflate(R.layout.reigster_info_fragment, container, false);
+        mView.setOnClickListener(null);
+        mContext = getActivity();
+        userInfo = DoingApplication.getInstance().getUserInfo();
+        headImag = (CircleImageView) mView.findViewById(R.id.head_image);
+        headImag.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showImagePickDialog();
+            }
+        });
+        nickTv = (EditText) mView.findViewById(R.id.register_nick_tv2);
+        ageTv = (EditText) mView.findViewById(R.id.register_age_tv2);
+        professionTv = (EditText) mView.findViewById(R.id.register_profession_tv2);
+        confirm = (TextView) mView.findViewById(R.id.register_confirm);
+        confirm.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (TextUtils.isEmpty(ageTv.getText().toString())) {
+                    userInfo.age = Integer.valueOf(getActivity().getResources().getString(
+                            R.string.register_age));
+                } else {
+                    userInfo.age = Integer.valueOf(ageTv.getText().toString());
+                }
+                if (TextUtils.isEmpty(nickTv.getText().toString())) {
+                    userInfo.nick = getActivity().getResources().getString(R.string.register_nick);
+                } else {
+                    userInfo.nick = nickTv.getText().toString();
+                }
+                if (TextUtils.isEmpty(professionTv.getText().toString())) {
+                    userInfo.profession = getActivity().getResources().getString(
+                            R.string.register_profession);
+                } else {
+                    userInfo.profession = professionTv.getText().toString();
+                }
+                DoingApplication.getInstance().saveUserinfo(userInfo);
+                uploadUserInfo();
+            }
+        });
+        return mView;
+    }
+
+    // 上传用户注册信息
+    private void uploadUserInfo() {
+
+        // 上传文件
+        File iamgFile = null;
+        if (userInfo.headImag!=null){
+            String path = getRealPathFromURI(userInfo.headImag);
+            iamgFile = new File(path);
+        }
+        String dataString = new Gson().toJson(userInfo.getData());
+        LogUtils.i("wzh",dataString);
+        String encryptData = AESCoder.encryptToBase64(dataString, Constant.SECRET_KEY);
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("imgSelect", "0");
+        params.put("data", encryptData);
+
+        Listener<String> listener = new Listener<String>() {
+
+            @Override
+            public void onResponse(String arg0) {
+                Gson gson = new Gson();
+                try {
+                    UploadSuccess respon = gson.fromJson(arg0,UploadSuccess.class);
+                    if (respon!=null){
+                        if (respon.status == 200) {
+                            SharePreferenceHelper.saveResponceUserInfo(respon);
+                        }else{
+                            Toast.makeText(getActivity(), respon.statusText,Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        ErrorListener errorListener = new ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError arg0) {
+                Toast.makeText(getActivity(),"注册失败，请检查网络",Toast.LENGTH_SHORT).show();
+            }
+        };
+        MultipartRequest multipartRequest = new MultipartRequest(uploadUrl,
+                errorListener, listener, "imgFile", iamgFile, params);
+
+        HttpManager.getInstance().addToRequestQueue(multipartRequest);
+    }
+    public String getRealPathFromURI(Uri contentUri) {
+        String res = null;
+        String[] proj = { MediaStore.Images.Media.DATA };
+        Cursor cursor = mContext.getContentResolver().query(contentUri, proj, null, null, null);
+        if(cursor.moveToFirst()){;
+           int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+           res = cursor.getString(column_index);
+        }
+        cursor.close();
+        return res;
+    }
+    // 获取照片
+    public void showImagePickDialog() {
+        String title = "获取图片的方式";
+        String[] choices = new String[] { "拍照", "从手机中选择" };
+
+        new AlertDialog.Builder(mContext).setTitle(title)
+                .setItems(choices, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        switch (which) {
+                        case 0:
+                            ImageUtils.openCameraImage(getActivity());
+                            break;
+                        case 1:
+                            ImageUtils.openLocalImage(getActivity());
+                            break;
+                        }
+                    }
+                }).setNegativeButton("返回", null).show();
+    }
+
+    // 处理获取照片后的回调
+    public void onEventMainThread(BaseActivity.OnActivityResult event) {
+
+        int requestCode = event.requestCode;
+        int resultCode = event.resultCode;
+        Intent data = event.data;
+        int RESULT_CANCELED = 0;
+        if (resultCode == RESULT_CANCELED) {
+            return;
+        }
+
+        switch (requestCode) {
+        // 拍照获取图片
+        case ImageUtils.GET_IMAGE_BY_CAMERA:
+            // uri传入与否影响图片获取方式,以下二选一
+            // 方式一,自定义Uri(ImageUtils.imageUriFromCamera),用于保存拍照后图片地址
+            if (ImageUtils.imageUriFromCamera != null) {
+                // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
+                // iv.setImageURI(ImageUtils.imageUriFromCamera);
+
+                // 对图片进行裁剪
+                ImageUtils.cropImage(getActivity(), ImageUtils.imageUriFromCamera);
+                break;
+            }
+
+            break;
+        // 手机相册获取图片
+        case ImageUtils.GET_IMAGE_FROM_PHONE:
+            if (data != null && data.getData() != null) {
+                // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
+                // iv.setImageURI(data.getData());
+
+                // 对图片进行裁剪
+                ImageUtils.cropImage(getActivity(), data.getData());
+            }
+            break;
+        // 裁剪图片后结果
+        case ImageUtils.CROP_IMAGE:
+            if (ImageUtils.cropImageUri != null) {
+                // 可以直接显示图片,或者进行其他处理(如压缩等)
+                headImag.setImageURI(ImageUtils.cropImageUri);
+                userInfo.headImag = ImageUtils.cropImageUri;
+            }
+            break;
+        default:
+            break;
+        }
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        QEventBus.getEventBus(DoingActivity.class.getName()).register(this);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        QEventBus.getEventBus(DoingActivity.class.getName()).unregister(this);
+    }
+}

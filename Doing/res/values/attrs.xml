@@ -1,0 +1,45 @@
+<resources>
+    
+    <declare-styleable name="nightTheme">
+        <!-- Dialog -->
+        <attr name="shareDialogBg" format="reference|color" />          <!--白色圆角Shape / 深色圆角Shape-->
+        <!--<attr name="shareButtonBg" format="reference|color" />-->
+        <attr name="shape_dialog_bg" format="reference|color" />        <!--圆角FFF / 圆角1C1F27-->
+        <attr name="shape_dialog_title_text_color" format="color" />    <!--333 / 616A71-->
+        <attr name="shape_dialog_content_text_color" format="color" />  <!--666 / 616A71-->
+        <attr name="shape_dialog_confirm_button_text_color" format="color" /><!--6DC875 / 184D25-->
+        <attr name="shape_dialog_button_bg" format="reference|color" /> <!--F0F1F2 / 181B22-->
+        <attr name="shape_dialog_content_bg" format="reference|color" />
+        <attr name="shape_dialog_button_divider_color" format="color" /><!--E5E5E5 / 20242D-->
+    </declare-styleable>
+    
+    <declare-styleable name="ViewPagerIndicator">
+        <!-- Style of the circle indicator. -->
+        <attr name="vpiCirclePageIndicatorStyle" format="reference"/>
+        <!-- Style of the icon indicator's views. -->
+        <attr name="vpiIconPageIndicatorStyle" format="reference"/>
+        <!-- Style of the line indicator. -->
+        <attr name="vpiLinePageIndicatorStyle" format="reference"/>
+        <!-- Style of the title indicator. -->
+        <attr name="vpiTitlePageIndicatorStyle" format="reference"/>
+        <!-- Style of the tab indicator's tabs. -->
+        <attr name="vpiTabPageIndicatorStyle" format="reference"/>
+        <!-- Style of the underline indicator. -->
+        <attr name="vpiUnderlinePageIndicatorStyle" format="reference"/>
+    </declare-styleable>
+    
+    <declare-styleable name="TabView">
+        <attr name="fragmentTabPageIndicator" format="reference" />
+        <attr name="fragmentTabView" format="reference" />
+    </declare-styleable>
+    
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+    
+    <declare-styleable name = "MyBanner"> 
+		<attr name="from" format = "string" /> 
+	</declare-styleable>
+
+</resources>

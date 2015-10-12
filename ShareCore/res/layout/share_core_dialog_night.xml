@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/share_bg_shape_night"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/share_share"
+        android:textColor="@color/share_title_color_night"
+        android:textSize="17dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/share_grid_bg_shape_night"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/share_item_weixin_timeline"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg_night"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_weixin_timeline_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_weixin_timeline"
+                    android:textColor="@color/share_grid_item_text_color_night"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_item_weixin_friends"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg_night"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_weixin_friend_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_weixin_friends"
+                    android:textColor="@color/share_grid_item_text_color_night"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_item_weibo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg_night"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_weibo_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_weibo"
+                    android:textColor="@color/share_grid_item_text_color_night"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/share_item_qzone"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg_night"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_qzone_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_qzone"
+                    android:textColor="@color/share_grid_item_text_color_night"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_item_qq"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg_night"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_qq_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_qq"
+                    android:textColor="@color/share_grid_item_text_color_night"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_item_douban"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg_night"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_douban_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_douban"
+                    android:textColor="@color/share_grid_item_text_color_night"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/share_item_cope_link"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg_night"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_cope_link_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_cope_link"
+                    android:textColor="@color/share_grid_item_text_color_night"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_item_msg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg"
+                android:clickable="false"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_message" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_msg"
+                    android:textColor="@color/share_grid_item_text_color"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/share_item_more"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_selector_share_bg_night"
+                android:clickable="false"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/share_share_more_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/share_share_more"
+                    android:textColor="@color/share_grid_item_text_color_night"
+                    android:textSize="@dimen/share_grid_item_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/share_cancel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/share_selector_cancel_btn_bg_night"
+        android:text="@string/share_cancel"
+        android:textColor="@color/share_title_color_night"
+        android:textSize="16dp" />
+
+</LinearLayout>

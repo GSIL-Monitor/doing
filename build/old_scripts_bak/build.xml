@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    name="MSearch"
+    default="help" >
+
+    <property file="local.properties" />
+
+    <property file="ant.properties" />
+
+    <property environment="env" />
+	
+    <condition
+        property="sdk.dir"
+        value="${env.ANDROID_HOME}" >
+
+        <isset property="env.ANDROID_HOME" />
+    </condition>
+	
+
+    <loadproperties srcFile="project.properties" />
+
+    <!-- quick check on sdk.dir -->
+
+    <fail
+        message="sdk.dir is missing. Make sure to generate local.properties using &apos;android update project&apos; or to inject it through the ANDROID_HOME environment variable."
+        unless="sdk.dir" />
+
+    <import
+        file="custom_rules.xml"
+        optional="true" />
+
+    <import file="${sdk.dir}/tools/ant/build.xml" />
+	
+	
+    <target name="channel" >
+
+        <property
+            name="channel"
+            value="${channel}" />
+
+        <replaceregexp
+            byline="true"
+            encoding="UTF-8"
+            flags="g" >
+
+            <regexp pattern="android:name=&quot;MSEARCH_CHANNEL&quot; android:value=&quot;(.*)&quot;" />
+
+            <substitution expression="android:name=&quot;MSEARCH_CHANNEL&quot; android:value=&quot;${channel}&quot;" />
+
+            <fileset
+                dir=""
+                includes="AndroidManifest.xml" />
+        </replaceregexp>
+
+        <property
+            name="out.final.file"
+            location="${apk.dir}/${ant.project.name}_${channel}_${build_date}.apk" />
+
+        <antcall target="clean" />
+
+        <antcall target="release" />
+
+    </target>
+
+    
+
+</project>

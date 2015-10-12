@@ -1,0 +1,27 @@
+{
+    "data": {
+    	"index_banner": [
+
+    	],
+	   "index_cates":[
+			{
+				"id": 0,
+				"type": "2",
+		        "sub_type": "0",
+		        "title": "礼物精选",
+		        "snippt": "心仪好礼特价",
+		        "img_name":"local_hotype_gift",
+		        "dest_url": "http://m.shengri.cn/shop/gift?hmsr=qhhaosou&r=qhhaosou"
+			},
+			{
+				"id": 1,
+				"type": "2",
+		        "sub_type": "0",
+		        "title": "鲜花速递",
+		        "snippt": "爱你一生一世",
+		        "img_name":"local_hotype_flower",
+		        "dest_url": "http://m.shengri.cn/shop/flower?hmsr=qhhaosou&r=qhhaosou"
+			}
+		]
+    }
+}

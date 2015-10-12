@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+
+    <!-- 升级检查的服务器地址，如果不配置将使用云协议的默认配置（真实服务器地址）, w-mkill2是测试服务器地址     value="http://w-mkill2.safe.bjsc.qihoo.net/safe_update" />-->
+    <UpdateCheck>
+        <!-- <Item
+            key="server"
+            value="http://ueng15.safe.bjcc.qihoo.net/safe_update" />
+        <Item
+            key="localinipath"
+            value="/sdcard/myini" />
+        <Item
+            key="uselocalini"
+            value="0" />  -->
+        <Item
+            key="product"
+            value="around_app" />
+    </UpdateCheck>
+
+</Config>

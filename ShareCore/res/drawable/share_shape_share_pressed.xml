@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <gradient
+        android:endColor="@color/share_grid_item_text_color_pressed"
+        android:startColor="@color/share_grid_item_text_color_pressed" >
+    </gradient>
+
+    <corners android:radius="1dp"></corners>
+
+</shape>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 整个app3种字体大小 -->
+
+    <dimen name="around_normal_textsize">16sp</dimen>
+    <dimen name="around_big_textsize">19sp</dimen>
+    <dimen name="around_title_textsize">17sp</dimen>
+    <dimen name="around_small_textsize">14sp</dimen>
+    <dimen name="around_very_small_textsize">12sp</dimen>
+    <dimen name="around_very_small_textsize_discount">11sp</dimen>
+    <!--注册页-->
+    <dimen name="register_info_width">230dp</dimen>
+    <dimen name="register_info_height">40dp</dimen>
+    <dimen name="register_edit_width">150dp</dimen>
+
+</resources>

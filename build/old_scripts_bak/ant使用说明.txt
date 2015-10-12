@@ -1,0 +1,5 @@
+1. 下载ant并配置好ant运行环境。配置ANT_HOME和ANDROID_SDK_HOME环境变量，并加入到Path中。
+2. 各依赖工程生成build.xml文件，方法：dos命令下，输入android updateproject -p 工程目录，即可生成build.xml文件和local.properties文件。
+3. 依照步骤2的方法在主工程中生成build文件，往local.properties添加文keystore放置路径、密码以及alias密码，apk文件放置目录。
+4. custom_rules.xml中配置第三方jar包（libs之外的jar包）。
+5. 编写build_channel.bat和build.bat文件，最后dos进入工程目录下，执行build.bat命令即可开始编译打包。

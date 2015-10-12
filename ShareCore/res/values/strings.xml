@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="share_confirm">确定</string>
+    <string name="share_cancel">取消</string>
+    <string name="share_back">返回</string>
+    <string name="share_share">分享</string>
+    <string name="share_backup">保存</string>
+    <string name="share_delete">删除</string>
+    <string name="share_share_weixin_timeline">微信朋友圈</string>
+    <string name="share_share_weixin_friends">微信好友</string>
+    <string name="share_share_qq">QQ好友</string>
+    <string name="share_share_qzone">QQ空间</string>
+    <string name="share_share_weibo">微博</string>
+    <string name="share_share_douban">豆瓣</string>
+    <string name="share_share_cope_link">复制链接</string>
+    <string name="share_share_more">更多</string>
+    <string name="share_share_msg">短信</string>
+
+    <string name="share_channel_is_error">分享渠道标记错误,请重试</string>
+    <string name="share_callback_is_null">回调函数为空</string>
+
+    <!-- weixin -->
+    <string name="weixin_errcode_success">发送成功</string>
+    <string name="weixin_errcode_cancel">发送取消</string>
+    <string name="weixin_errcode_deny">发送被拒绝</string>
+    <string name="weixin_errcode_unknown">发送返回</string>
+    <string name="share_weixin_is_not_install">微信分享失败,请检查是否已经安装</string>
+
+    <!-- callback -->
+    <string name="share_successed">分享成功</string>
+    <string name="share_failed">分享失败</string>
+    <string name="share_canceled">取消分享</string>
+
+    <!-- qq -->
+    <string name="share_link_is_error">链接有误</string>
+    <string name="share_open_share_activity_failed">打开分享页面失败</string>
+
+
+    <!-- copy link -->
+    <string name="share_copy_link_is_null">复制链接失败,链接为空</string>
+    <string name="share_copy_link_successed">复制链接成功</string>
+
+    <!-- auth -->
+    <string name="share_auth_successed">授权成功</string>
+    <string name="share_auth_canceled">取消授权</string>
+    <string name="share_auth_failed">授权失败</string>
+</resources>

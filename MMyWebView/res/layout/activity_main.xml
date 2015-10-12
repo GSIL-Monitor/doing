@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:orientation="vertical">
+	    <!-- button 演示Java调用web -->
+	    <Button 
+	        android:id="@+id/button"
+	        android:layout_width="match_parent"
+	        android:text="@string/button_name"
+	        android:layout_height="48dp"
+	        />
+	    
+	    <!-- webview 演示web调用Java -->
+	    <com.qihoo.around.mywebview.MyBridgeWebView
+	        android:id="@+id/webView"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent" >
+	     </com.qihoo.around.mywebview.MyBridgeWebView>
+     </LinearLayout>
+     
+    <com.qihoo.around.mywebview.PageProgressView
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/url_progress"
+            android:layout_marginTop="48dp"/>
+
+</RelativeLayout>

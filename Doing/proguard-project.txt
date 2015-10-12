@@ -1,0 +1,186 @@
+-dontnote
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+#-ignorewarnings
+-dontnote
+
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class * extends android.inputmethodservice.InputMethodService
+
+
+-keep public class * extends android.support.v4.app.Fragment
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class * extends android.webkit.WebView
+
+
+
+
+-dontwarn android.support.v4.**
+-dontwarn com.google.gson.**
+-dontwarn org.dom4j.**
+-dontwarn org.slf4j.**
+-dontwarn org.http.mutipart.**
+-dontwarn org.apache.**
+-dontwarn org.apache.log4j.**
+-dontwarn org.apache.commons.logging.**
+-dontwarn org.apache.commons.codec.binary.**
+-dontwarn com.qihoo.alliance.**
+-dontwarn com.qihoo.around.plugin.**
+
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+# keep setters in Views so that animations can still work.
+-keepclassmembers public class * extends android.view.View {
+   void set*(***);
+   *** get*();
+}
+-keepclassmembers class **.R$* {
+    public static <fields>;
+}
+
+-keepclasseswithmembers class * { 
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep class * implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+   public *;
+}
+
+-keepclassmembers class webview._webview {
+   public void ReIndectReady();
+}
+-keepclassmembers class com.qihoo.around.view.webview.BrowserWebView{
+   public *;
+}
+-keep class com.qihoo.around.jsInterface.**{*;}
+
+-keep class com.qihoo.alliance.AppInfo {*;}
+
+#jar libs
+-keep class android.support.v4.** {*;}
+-keep class com.google.gson.** {*;}
+-keep class com.android.volley.** {*;}
+-keep class com.amap.api.location.** {*;}
+-keep class com.aps.** {*;}
+-keep class pl.droidsonroids.gif.** {*;}
+-keep class com.qihoo.antivirus.update.** {*;}
+-keep class com.qihoo360.launcher.util.** {*;}
+-keep class com.qihoo.around.push.** {*;}
+-keep class pl.droidsonroids.gif.** {*;}
+-keep class com.badlogic.** { *; }
+-keep class com.tencent.mm.sdk.** {
+   *;
+}
+-keep class * implements com.badlogic.gdx.utils.Json*
+
+#webview
+-keep class com.qihoo.around.view.webview.InjectJsType {*;}
+-keep class com.qihoo.around.jump.JavascriptInject {*;}
+#-keep class com.qihoo.around.view.webview.* {*;}
+-keep class com.qihoo.around.view.webview.*$* {*;}
+
+-keep class com.qihoo.http.base.** { *; }
+
+#EventBus 插件内有引用 必须keep
+-keep class com.qihoo.around._public.eventbus.QEventBus { *; }
+-keep class de.greenrobot.event.**{*;}
+
+-keepclassmembers class com.qihoo.around.properties.Constant{ *; }
+
+-keepattributes Signature
+-keepattributes *Annotation*
+
+
+-keep class utils.**{*;}
+-keep class com.qihoo.around.view.dialog.UrlShareDialog$Long2shortUrlModel {*;}
+-keep class com.qihoo.around._public.funccount.** {*;}
+-keep class com.qihoo.around.msearchpublic.suggest.* {*;}
+-keep class com.qihoo.around._public.push.**{*;}
+-keep class com.qihoo.around._public.sug.**{*;}
+-keep class com.qihoo.around.sug.**{*;}
+# db
+-keep class com.qihoo.around.db.**{*;}
+-keep class com.qihoo.around.bean.**{*;}
+-keep class com.qihoo.around.viewholder.**{*;}
+-keep class com.qihoo.around.download.DownloadBean {*;}
+
+#支付
+-keep class com.qihoo360pp.wallet.**{*;}
+-keep class com.qihoopay.framework.**{*;}
+-keep class com.qihoo.around.pay.**{*;}
+
+
+#导航插件
+-keep class com.qihoo.haosou.view.webview.MapToken { *; }
+-keep class com.qihu.mobile.lbs.** { *; }
+-dontwarn com.qihu.mobile.lbs.**
+
+#插件模块
+-dontwarn com.qihoo.plugin.**
+-keep class com.qihoo.plugin.** {*;}
+
+# http
+-keep class com.qihoo.around._public._interface.**{*;}
+-keep class com.qihoo.around.jsInterface.**{*;}
+
+-keep class com.qihoo.around._public.http.**{*;}
+
+# json
+-keep class com.qihoo.around.json.** {*;}
+
+-renamesourcefileattribute SourceFile
+-keepattributes SourceFile,LineNumberTable
+
+#openFileChooser
+-keepclassmembers class * {
+    public void openFileChooser(android.webkit.ValueCallback,java.lang.String);
+    public void openFileChooser(android.webkit.ValueCallback);
+    public void openFileChooser(android.webkit.ValueCallback, java.lang.String, java.lang.String);
+}
+
+-keepclassmembers class ** {
+    public void onEvent*(**);
+}
+
+-keepclassmembers class * {
+   public <init>(org.json.JSONObject);
+}
+
+-dontwarn org.apache.commons.**
+
+#push
+-keep class com.qihoo.around.service.order.db.**{*;}
+-keep class com.qihoo.around._public.order.**{*;}
+-keep class com.qihoo.around.service.push.**{*;}
+-keep class com.qihoo.around.service.update.bean.**{*;}
+-keep class com.qihoo.around.service.notify.bean.**{*;}
+-keep class com.qihoo.around.service.notify.notification.**{*;}
+
+#filtration
+-keep class com.qihoo.around.bean.filtration.**{*;}
+#bingPhoneNumber
+-keep class com.qihoo.around.quc.BindPhoneNumberActivity.SmsVerifyBean.**{*;}
