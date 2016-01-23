@@ -25,8 +25,8 @@ public class ImageUtils {
 		ImageUtils.imageUriFromCamera = ImageUtils.createImagePathUri(activity);
 		
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		// MediaStore.EXTRA_OUTPUT²ÎÊı²»ÉèÖÃÊ±,ÏµÍ³»á×Ô¶¯Éú³ÉÒ»¸öuri,µ«ÊÇÖ»»á·µ»ØÒ»¸öËõÂÔÍ¼
-		// ·µ»ØÍ¼Æ¬ÔÚonActivityResultÖĞÍ¨¹ıÒÔÏÂ´úÂë»ñÈ¡
+		// MediaStore.EXTRA_OUTPUTï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±,ÏµÍ³ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½uri,ï¿½ï¿½ï¿½ï¿½Ö»ï¿½á·µï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼
+		// ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½onActivityResultï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½ï¿½ï¿½ï¿½È¡
 		// Bitmap bitmap = (Bitmap) data.getExtras().get("data"); 
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUtils.imageUriFromCamera);
 		activity.startActivityForResult(intent, ImageUtils.GET_IMAGE_BY_CAMERA);
@@ -45,28 +45,28 @@ public class ImageUtils {
 		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(srcUri, "image/*");
 		intent.putExtra("crop", "true");
+
+		////////////////////////////////////////////////////////////////
+		// 1.å®½é«˜å’Œæ¯”ä¾‹éƒ½ä¸è®¾ç½®æ—¶,è£å‰ªæ¡†å¯ä»¥è‡ªè¡Œè°ƒæ•´(æ¯”ä¾‹å’Œå¤§å°éƒ½å¯ä»¥éšæ„è°ƒæ•´)
+		////////////////////////////////////////////////////////////////
+		// 2.åªè®¾ç½®è£å‰ªæ¡†å®½é«˜æ¯”(aspect)å,è£å‰ªæ¡†æ¯”ä¾‹å›ºå®šä¸å¯è°ƒæ•´,åªèƒ½è°ƒæ•´å¤§å°
+		////////////////////////////////////////////////////////////////
+		// 3.è£å‰ªåç”Ÿæˆå›¾ç‰‡å®½é«˜(output)çš„è®¾ç½®å’Œè£å‰ªæ¡†æ— å…³,åªå†³å®šæœ€ç»ˆç”Ÿæˆå›¾ç‰‡å¤§å°
+		////////////////////////////////////////////////////////////////
+		// 4.è£å‰ªæ¡†å®½é«˜æ¯”ä¾‹(aspect)å¯ä»¥å’Œè£å‰ªåç”Ÿæˆå›¾ç‰‡æ¯”ä¾‹(output)ä¸åŒ,æ­¤æ—¶,
+		//	ä¼šä»¥è£å‰ªæ¡†çš„å®½ä¸ºå‡†,æŒ‰ç…§è£å‰ªå®½é«˜æ¯”ä¾‹ç”Ÿæˆä¸€ä¸ªå›¾ç‰‡,è¯¥å›¾å’Œæ¡†é€‰éƒ¨åˆ†å¯èƒ½ä¸åŒ,
+		//  ä¸åŒçš„æƒ…å†µå¯èƒ½æ˜¯æˆªå–æ¡†é€‰çš„ä¸€éƒ¨åˆ†,ä¹Ÿå¯èƒ½è¶…å‡ºæ¡†é€‰éƒ¨åˆ†,å‘ä¸‹å»¶ä¼¸è¡¥è¶³
+		////////////////////////////////////////////////////////////////
 		
-		////////////////////////////////////////////////////////////////
-		// 1.¿í¸ßºÍ±ÈÀı¶¼²»ÉèÖÃÊ±,²Ã¼ô¿ò¿ÉÒÔ×ÔĞĞµ÷Õû(±ÈÀıºÍ´óĞ¡¶¼¿ÉÒÔËæÒâµ÷Õû)
-		////////////////////////////////////////////////////////////////
-		// 2.Ö»ÉèÖÃ²Ã¼ô¿ò¿í¸ß±È(aspect)ºó,²Ã¼ô¿ò±ÈÀı¹Ì¶¨²»¿Éµ÷Õû,Ö»ÄÜµ÷Õû´óĞ¡
-		////////////////////////////////////////////////////////////////
-		// 3.²Ã¼ôºóÉú³ÉÍ¼Æ¬¿í¸ß(output)µÄÉèÖÃºÍ²Ã¼ô¿òÎŞ¹Ø,Ö»¾ö¶¨×îÖÕÉú³ÉÍ¼Æ¬´óĞ¡
-		////////////////////////////////////////////////////////////////
-		// 4.²Ã¼ô¿ò¿í¸ß±ÈÀı(aspect)¿ÉÒÔºÍ²Ã¼ôºóÉú³ÉÍ¼Æ¬±ÈÀı(output)²»Í¬,´ËÊ±,
-		//	»áÒÔ²Ã¼ô¿òµÄ¿íÎª×¼,°´ÕÕ²Ã¼ô¿í¸ß±ÈÀıÉú³ÉÒ»¸öÍ¼Æ¬,¸ÃÍ¼ºÍ¿òÑ¡²¿·Ö¿ÉÄÜ²»Í¬,
-		//  ²»Í¬µÄÇé¿ö¿ÉÄÜÊÇ½ØÈ¡¿òÑ¡µÄÒ»²¿·Ö,Ò²¿ÉÄÜ³¬³ö¿òÑ¡²¿·Ö,ÏòÏÂÑÓÉì²¹×ã
-		////////////////////////////////////////////////////////////////
-		
-		// aspectX aspectY ÊÇ²Ã¼ô¿ò¿í¸ßµÄ±ÈÀı
+		// aspectX aspectY ï¿½Ç²Ã¼ï¿½ï¿½ï¿½ï¿½ßµÄ±ï¿½ï¿½ï¿½
 		intent.putExtra("aspectX", 1);
 		intent.putExtra("aspectY", 1);
-		// outputX outputY ÊÇ²Ã¼ôºóÉú³ÉÍ¼Æ¬µÄ¿í¸ß
+		// outputX outputY ï¿½Ç²Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½Ä¿ï¿½ï¿½
 //		intent.putExtra("outputX", 300);
 //		intent.putExtra("outputY", 100);
 		
-		// return-dataÎªtrueÊ±,»áÖ±½Ó·µ»ØbitmapÊı¾İ,µ«ÊÇ´óÍ¼²Ã¼ôÊ±»á³öÏÖÎÊÌâ,ÍÆ¼öÏÂÃæÎªfalseÊ±µÄ·½Ê½
-		// return-dataÎªfalseÊ±,²»»á·µ»Øbitmap,µ«ĞèÒªÖ¸¶¨Ò»¸öMediaStore.EXTRA_OUTPUT±£´æÍ¼Æ¬uri
+		// return-dataÎªtrueÊ±,ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½bitmapï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ç´ï¿½Í¼ï¿½Ã¼ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ï¿½ÎªfalseÊ±ï¿½Ä·ï¿½Ê½
+		// return-dataÎªfalseÊ±,ï¿½ï¿½ï¿½á·µï¿½ï¿½bitmap,ï¿½ï¿½ï¿½ï¿½ÒªÖ¸ï¿½ï¿½Ò»ï¿½ï¿½MediaStore.EXTRA_OUTPUTï¿½ï¿½ï¿½ï¿½Í¼Æ¬uri
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, ImageUtils.cropImageUri);
 		intent.putExtra("return-data", false);
 		
@@ -74,10 +74,10 @@ public class ImageUtils {
 	}
 	
 	/**
-	 * ´´½¨Ò»ÌõÍ¼Æ¬µØÖ·uri,ÓÃÓÚ±£´æÅÄÕÕºóµÄÕÕÆ¬
+	 * ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ö·uri,ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õºï¿½ï¿½ï¿½ï¿½Æ¬
 	 * 
 	 * @param context
-	 * @return Í¼Æ¬µÄuri
+	 * @return Í¼Æ¬ï¿½ï¿½uri
 	 */
 	private static Uri createImagePathUri(Context context) {
 		Uri imageFilePath = null;
@@ -85,19 +85,19 @@ public class ImageUtils {
 		SimpleDateFormat timeFormatter = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA);
 		long time = System.currentTimeMillis();
 		String imageName = timeFormatter.format(new Date(time));
-		// ContentValuesÊÇÎÒÃÇÏ£ÍûÕâÌõ¼ÇÂ¼±»´´½¨Ê±°üº¬µÄÊı¾İĞÅÏ¢
+		// ContentValuesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 		ContentValues values = new ContentValues(3);
 		values.put(MediaStore.Images.Media.DISPLAY_NAME, imageName);
 		values.put(MediaStore.Images.Media.DATE_TAKEN, time);
 		values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
-		if (status.equals(Environment.MEDIA_MOUNTED)) {// ÅĞ¶ÏÊÇ·ñÓĞSD¿¨,ÓÅÏÈÊ¹ÓÃSD¿¨´æ´¢,µ±Ã»ÓĞSD¿¨Ê±Ê¹ÓÃÊÖ»ú´æ´¢
+		if (status.equals(Environment.MEDIA_MOUNTED)) {// ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½SDï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½SDï¿½ï¿½ï¿½æ´¢,ï¿½ï¿½Ã»ï¿½ï¿½SDï¿½ï¿½Ê±Ê¹ï¿½ï¿½ï¿½Ö»ï¿½ï¿½æ´¢
 			imageFilePath = context.getContentResolver().insert(
 					MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
 		} else {
 			imageFilePath = context.getContentResolver().insert(
 					MediaStore.Images.Media.INTERNAL_CONTENT_URI, values);
 		}
-		Log.i("", "Éú³ÉµÄÕÕÆ¬Êä³öÂ·¾¶£º" + imageFilePath.toString());
+		Log.i("", "ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½Æ¬ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½" + imageFilePath.toString());
 		return imageFilePath;
 	}
 

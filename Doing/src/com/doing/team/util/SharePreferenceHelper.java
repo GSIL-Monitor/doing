@@ -5,10 +5,9 @@ import java.util.Map;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
 
 import com.doing.team.DoingApplication;
-import com.doing.team.bean.UploadSuccess;
+import com.doing.team.bean.RegisterRespond;
 import com.doing.team.bean.UserInfo;
 import com.doing.team.properties.Constant;
 import com.google.gson.Gson;
@@ -38,7 +37,7 @@ public class SharePreferenceHelper {
         return editor.commit();
     }
 
-    public static boolean saveResponceUserInfo(UploadSuccess userInfo) {
+    public static boolean saveResponceUserInfo(RegisterRespond userInfo) {
         SharedPreferences.Editor editor = getSharePreference().edit();
         String data = new Gson().toJson(userInfo);
         String encryptData = AESCoder.encryptToBase64(data, Constant.SECRET_KEY);
@@ -46,13 +45,13 @@ public class SharePreferenceHelper {
         return editor.commit();
     }
 
-    public static UploadSuccess getResponceUserInfo() {
+    public static RegisterRespond getResponceUserInfo() {
         SharedPreferences sp = getSharePreference();
         String data = sp.getString(Constant.RESPONSE_USER_INFO, "");
         String decripyData = AESCoder.decryptBase64ToUtf8(data, Constant.SECRET_KEY);
-        UploadSuccess userInfo = null;
+        RegisterRespond userInfo = null;
         try {
-            userInfo = new Gson().fromJson(decripyData,UploadSuccess.class);
+            userInfo = new Gson().fromJson(decripyData,RegisterRespond.class);
         }catch (Exception e){
             LogUtils.e(e);
         }

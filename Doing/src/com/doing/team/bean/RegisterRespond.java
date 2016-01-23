@@ -3,7 +3,7 @@ package com.doing.team.bean;
 /**
  * Created by wangzhiheng on 2015/10/12.
  */
-public class UploadSuccess {
+public class RegisterRespond {
     public int status;
     public String statusText;
     public Data data;

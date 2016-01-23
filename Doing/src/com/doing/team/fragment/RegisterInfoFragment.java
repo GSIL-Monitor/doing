@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,21 +17,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request.Method;
-import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.doing.team.DoingApplication;
 import com.doing.team.R;
 import com.doing.team.activity.BaseActivity;
 import com.doing.team.activity.DoingActivity;
-import com.doing.team.bean.UploadSuccess;
+import com.doing.team.bean.RegisterRespond;
 import com.doing.team.bean.UserInfo;
 import com.doing.team.eventbus.QEventBus;
-import com.doing.team.eventdefs.ApplicationEvents;
 import com.doing.team.http.HttpManager;
 import com.doing.team.properties.Constant;
 import com.doing.team.util.AESCoder;
@@ -43,12 +37,10 @@ import com.doing.team.view.CircleImageView;
 import com.google.gson.Gson;
 import com.qihoo.haosou.msearchpublic.util.LogUtils;
 
-import org.json.JSONObject;
-
 import java.io.File;
-import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class RegisterInfoFragment extends BaseFragment {
     private View mView;
@@ -111,10 +103,15 @@ public class RegisterInfoFragment extends BaseFragment {
     private void uploadUserInfo() {
 
         // 上传文件
-        File iamgFile = null;
+        File imagFile = null;
+        List<File> imagFiles = new ArrayList<File>();
+
         if (userInfo.headImag!=null){
             String path = getRealPathFromURI(userInfo.headImag);
-            iamgFile = new File(path);
+            imagFile = new File(path);
+            imagFiles.add(imagFile);
+            imagFiles.add(imagFile);
+
         }
         String dataString = new Gson().toJson(userInfo.getData());
         LogUtils.i("wzh",dataString);
@@ -129,7 +126,7 @@ public class RegisterInfoFragment extends BaseFragment {
             public void onResponse(String arg0) {
                 Gson gson = new Gson();
                 try {
-                    UploadSuccess respon = gson.fromJson(arg0,UploadSuccess.class);
+                    RegisterRespond respon = gson.fromJson(arg0,RegisterRespond.class);
                     if (respon!=null){
                         if (respon.status == 200) {
                             SharePreferenceHelper.saveResponceUserInfo(respon);
@@ -150,7 +147,7 @@ public class RegisterInfoFragment extends BaseFragment {
             }
         };
         MultipartRequest multipartRequest = new MultipartRequest(uploadUrl,
-                errorListener, listener, "imgFile", iamgFile, params);
+                errorListener, listener, "imgFile", imagFiles, params);
 
         HttpManager.getInstance().addToRequestQueue(multipartRequest);
     }
