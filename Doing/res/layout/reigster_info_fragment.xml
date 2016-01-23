@@ -1,130 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/white"
-    android:layout_height="match_parent">
-
-    <com.doing.team.view.CircleImageView
-        android:id="@+id/head_image"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:scaleType="centerCrop"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/ic_launcher" />
+    android:orientation="vertical" >
 
     <LinearLayout
-        android:id="@+id/register_nick"
-        android:layout_width="@dimen/register_info_width"
-        android:layout_height="@dimen/register_info_height"
-        android:layout_below="@+id/head_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/filtration_uncheck"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#f35600"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/register_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="11dp"
+            android:src="@drawable/back" />
 
         <TextView
-            android:id="@+id/register_nick_tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/black"
-            android:text="昵称" />
-
-        <EditText
-            android:id="@+id/register_nick_tv2"
-            android:layout_width="@dimen/register_edit_width"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/register_nick"
-            android:maxLength="6"/>
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="4.5dp"
+            android:text="注册"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/register_age"
-        android:layout_width="@dimen/register_info_width"
-        android:layout_height="@dimen/register_info_height"
-        android:layout_below="@+id/register_nick"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/filtration_uncheck"
-        android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37.5dp" >
 
-        <TextView
-            android:id="@+id/register_age_tv1"
+        <com.doing.team.view.CircleImageView
+            android:id="@+id/head_image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/register_head" />
+
+        <ImageView
+            android:id="@+id/register_camera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/black"
-            android:text="年龄" />
-
-        <EditText
-            android:id="@+id/register_age_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/register_age"
-            android:ems="2"
-            android:phoneNumber="true"
-            android:maxLength="2"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/register_profession"
-        android:layout_width="@dimen/register_info_width"
-        android:layout_height="@dimen/register_info_height"
-        android:layout_below="@+id/register_age"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/filtration_uncheck"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/register_profession_tv1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/black"
-            android:text="职业" />
-
-        <EditText
-            android:id="@+id/register_profession_tv2"
-            android:layout_width="@dimen/register_edit_width"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/register_profession"
-            android:maxLength="6" />
-    </LinearLayout>
+            android:layout_alignBottom="@+id/head_image"
+            android:layout_marginLeft="-30dp"
+            android:layout_toRightOf="@+id/head_image"
+            android:src="@drawable/register_camera" />
+    </RelativeLayout>
 
     <TextView
-        android:id="@+id/register_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/register_profession"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:clickable="false"
-        android:text="已帮你精心挑选了头像和个人呢信息" />
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="8.5dp"
+        android:text="已帮你精心挑选了头像和昵称"
+        android:textColor="#a3a3a3"
+        android:textSize="6sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37.5dp"
+        android:orientation="vertical"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp" >
+
+        <RelativeLayout
+            android:id="@+id/register_nick"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/register_info_height"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/register_nick_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:text="昵称"
+                android:textColor="#0a0a0a" />
+
+            <EditText
+                android:id="@+id/register_nick_tv2"
+                android:layout_width="@dimen/register_edit_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="6.5sp"
+                android:textColor="#a1a1a1"
+                android:hint="@string/register_nick"
+                android:maxLength="6" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/register_age"
+            android:layout_width="@dimen/register_info_width"
+            android:layout_height="@dimen/register_info_height"
+            android:layout_below="@+id/register_nick"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/register_age_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:text="年龄"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/register_age_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:ems="2"
+                android:hint="@string/register_age"
+                android:maxLength="2"
+                android:phoneNumber="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/register_profession"
+            android:layout_width="@dimen/register_info_width"
+            android:layout_height="@dimen/register_info_height"
+            android:layout_below="@+id/register_age"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/register_profession_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:text="职业"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/register_profession_tv2"
+                android:layout_width="@dimen/register_edit_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/register_profession"
+                android:maxLength="6" />
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/register_confirm"
-        android:layout_below="@+id/register_hint"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/register_hint"
         android:layout_centerHorizontal="true"
-        android:text="完成"/>
+        android:layout_marginTop="20dp"
+        android:text="完成" />
 
-</RelativeLayout>
+</LinearLayout>

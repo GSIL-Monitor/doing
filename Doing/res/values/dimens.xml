@@ -11,7 +11,7 @@
     <dimen name="around_very_small_textsize_discount">11sp</dimen>
     <!--注册页-->
     <dimen name="register_info_width">230dp</dimen>
-    <dimen name="register_info_height">40dp</dimen>
+    <dimen name="register_info_height">25dp</dimen>
     <dimen name="register_edit_width">150dp</dimen>
     <!--pulltorefresh-->
     <dimen name="header_footer_left_right_padding">24dp</dimen>

@@ -40,49 +40,6 @@
 	<uses-permission android:name="android.permission.READ_LOGS" />
  
 
-    -->
-
-
-    <!-- Other -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
-    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.qihoo360.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.android.launcher2.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.sec.android.app.twlauncher.WRITE_SETTINGS" />
-    <uses-permission android:name="com.sec.android.app.twlauncher.READ_SETTINGS" />
-    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="org.adw.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="org.adwfreak.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.gau.go.launcherex.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.gau.go.launcherex.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.qihoo360.home.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.qihoo360.home.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.fede.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.anddoes.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.lenovo.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.lenovo.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.nd.android.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.nd.android.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <!-- 在sdcard中创建/删除文件的权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -93,10 +50,6 @@
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
 
 
-    <!-- 升级权限 -->
-    <permission android:name="com.qihoo.antivirus.update.permission.around_app" />
-
-    <uses-permission android:name="com.qihoo.antivirus.update.permission.around_app" />
 
     <!-- 摄像头-->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -113,7 +66,6 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:debuggable="true"
         android:theme="@android:style/Theme.NoTitleBar" >
        
         <meta-data
