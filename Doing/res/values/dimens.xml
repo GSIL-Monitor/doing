@@ -13,5 +13,8 @@
     <dimen name="register_info_width">230dp</dimen>
     <dimen name="register_info_height">40dp</dimen>
     <dimen name="register_edit_width">150dp</dimen>
+    <!--pulltorefresh-->
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">12dp</dimen>
 
 </resources>

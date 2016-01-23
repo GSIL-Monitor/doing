@@ -1,39 +1,22 @@
 package com.doing.team.activity;
 
-import java.net.URLDecoder;
 import java.util.ArrayList;
-import java.util.List;
 
-import org.json.JSONObject;
-
-import android.app.Activity;
 import android.app.ActivityManager;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Looper;
 import android.os.MessageQueue.IdleHandler;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.doing.team.eventdefs.ApplicationEvents;
 import com.doing.team.fragment.BaseFragment;
-import com.doing.team.fragment.HompageFragment;
+import com.doing.team.fragment.ContentListFragment;
 import com.doing.team.fragment.RegisterFragment;
 import com.doing.team.util.NetworkManager;
 import com.doing.team.util.SharePreferenceHelper;
-import com.qihoo.haosou.msearchpublic.util.LogUtils;
-import com.doing.team.util.NetworkManager;
 import com.doing.team.eventbus.QEventBus;
 import com.doing.team.util._INetworkChange;
 import com.doing.team.DoingApplication;
@@ -71,7 +54,7 @@ public class DoingActivity extends BaseActivity implements _INetworkChange{
 		QEventBus.getEventBus().register(this);
 		setContentView(R.layout.activity_around);
 		registerFragments();
-		switchToFragment(HompageFragment.class,false);
+		switchToFragment(ContentListFragment.class,false);
 		//处理系统回收的特殊情况，用于重启后避免开启splashFragment
         if(savedInstanceState!=null){
         	if(savedInstanceState.getBoolean(NO_SPLASH)){
@@ -143,7 +126,7 @@ public class DoingActivity extends BaseActivity implements _INetworkChange{
 	 * 注册到fragment管理器
 	 */
 	private void registerFragments() {
-		registerFragment(HompageFragment.class,R.id.main_container);
+		registerFragment(ContentListFragment.class,R.id.main_container);
         registerFragment(RegisterFragment.class, R.id.main_container);
     }
 	
@@ -165,7 +148,7 @@ public class DoingActivity extends BaseActivity implements _INetworkChange{
     }
 	private void gotoNextFragmnet(){
 	    if (SharePreferenceHelper.isRegister()) {
-            switchToFragment(HompageFragment.class, false);
+            switchToFragment(ContentListFragment.class, false);
         }else {
             switchToFragment(RegisterFragment.class, false);
             

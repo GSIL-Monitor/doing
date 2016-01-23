@@ -27,6 +27,7 @@ import com.doing.team.activity.DoingActivity;
 import com.doing.team.bean.RegisterRespond;
 import com.doing.team.bean.UserInfo;
 import com.doing.team.eventbus.QEventBus;
+import com.doing.team.eventdefs.ApplicationEvents;
 import com.doing.team.http.HttpManager;
 import com.doing.team.properties.Constant;
 import com.doing.team.util.AESCoder;
@@ -75,7 +76,9 @@ public class RegisterInfoFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
 
-                if (TextUtils.isEmpty(ageTv.getText().toString())) {
+                QEventBus.getEventBus().post(new ApplicationEvents.SwitchToFragment(ContentListFragment.class,true));
+
+               /* if (TextUtils.isEmpty(ageTv.getText().toString())) {
                     userInfo.age = Integer.valueOf(getActivity().getResources().getString(
                             R.string.register_age));
                 } else {
@@ -93,7 +96,7 @@ public class RegisterInfoFragment extends BaseFragment {
                     userInfo.profession = professionTv.getText().toString();
                 }
                 DoingApplication.getInstance().saveUserinfo(userInfo);
-                uploadUserInfo();
+                uploadUserInfo();*/
             }
         });
         return mView;
@@ -110,7 +113,7 @@ public class RegisterInfoFragment extends BaseFragment {
             String path = getRealPathFromURI(userInfo.headImag);
             imagFile = new File(path);
             imagFiles.add(imagFile);
-            imagFiles.add(imagFile);
+//            imagFiles.add(imagFile);
 
         }
         String dataString = new Gson().toJson(userInfo.getData());
