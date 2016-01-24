@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="16dp"
+    android:background="@color/white">
+
+    <com.doing.team.view.CircleImageView
+        android:id="@+id/user_head_image"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ex_female_head" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/user_head_image"
+        android:paddingLeft="10dp"
+        android:text="爱笑的小酒窝"
+        android:textColor="@color/content_list_name"
+        android:textSize="@dimen/content_name" />
+
+    <TextView
+        android:id="@+id/content_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_name"
+        android:layout_toRightOf="@+id/user_head_image"
+        android:drawableLeft="@drawable/female"
+        android:paddingLeft="10dp"
+        android:paddingTop="3dp"
+        android:text="24岁"
+        android:textColor="@color/content_list_age"
+        android:textSize="@dimen/content_age" />
+
+    <TextView
+        android:id="@+id/user_profession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/user_name"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/user_name"
+        android:background="@drawable/female_profession_shape"
+        android:paddingBottom="1dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="1dp"
+        android:text="大学生"
+        android:textColor="@color/white"
+        android:textSize="@dimen/content_profession" />
+
+    <TextView
+        android:id="@+id/content_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="@string/content_just_now"
+        android:textColor="@color/content_list_time"
+        android:textSize="@dimen/content_time" />
+
+    <TextView
+        android:id="@+id/content_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_head_image"
+        android:lineSpacingExtra="4dp"
+        android:maxLines="2"
+        android:paddingTop="15dp"
+        android:text="我正在和好闺蜜放风筝,大黄蜂简单说分段函数金凤凰大厦发大水口返回"
+        android:textColor="@color/content_list_title"
+        android:textSize="@dimen/content_title" />
+
+</RelativeLayout>

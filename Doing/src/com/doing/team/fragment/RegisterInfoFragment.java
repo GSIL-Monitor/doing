@@ -43,15 +43,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class RegisterInfoFragment extends BaseFragment {
+public class RegisterInfoFragment extends BaseFragment implements View.OnFocusChangeListener{
     private View mView;
-    private EditText nickTv;
-    private EditText ageTv;
-    private EditText professionTv;
+    private EditText nickEt;
+    private EditText ageEt;
+    private EditText professionEt;
     private TextView confirm;
     private CircleImageView headImag;
     private Context mContext;
     private UserInfo userInfo;
+    private View back;
     private String uploadUrl = "http://123.57.223.85/do/gi";
 
     @Override
@@ -61,6 +62,12 @@ public class RegisterInfoFragment extends BaseFragment {
         mView.setOnClickListener(null);
         mContext = getActivity();
         userInfo = DoingApplication.getInstance().getUserInfo();
+        mView.findViewById(R.id.register_back).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                QEventBus.getEventBus().post(new ApplicationEvents.SwitchFragmentToRegisterGender(RegisterGenderFragment.class,false));
+            }
+        });
         headImag = (CircleImageView) mView.findViewById(R.id.head_image);
         headImag.setOnClickListener(new OnClickListener() {
             @Override
@@ -68,9 +75,12 @@ public class RegisterInfoFragment extends BaseFragment {
                 showImagePickDialog();
             }
         });
-        nickTv = (EditText) mView.findViewById(R.id.register_nick_tv2);
-        ageTv = (EditText) mView.findViewById(R.id.register_age_tv2);
-        professionTv = (EditText) mView.findViewById(R.id.register_profession_tv2);
+        nickEt = (EditText) mView.findViewById(R.id.register_nick_et);
+        ageEt = (EditText) mView.findViewById(R.id.register_age_et);
+        professionEt = (EditText) mView.findViewById(R.id.register_profession_et);
+        nickEt.setOnFocusChangeListener(this);
+        ageEt.setOnFocusChangeListener(this);
+        professionEt.setOnFocusChangeListener(this);
         confirm = (TextView) mView.findViewById(R.id.register_confirm);
         confirm.setOnClickListener(new OnClickListener() {
             @Override
@@ -78,25 +88,25 @@ public class RegisterInfoFragment extends BaseFragment {
 
                 QEventBus.getEventBus().post(new ApplicationEvents.SwitchToFragment(ContentListFragment.class,true));
 
-               /* if (TextUtils.isEmpty(ageTv.getText().toString())) {
+                if (TextUtils.isEmpty(ageEt.getText().toString())) {
                     userInfo.age = Integer.valueOf(getActivity().getResources().getString(
                             R.string.register_age));
                 } else {
-                    userInfo.age = Integer.valueOf(ageTv.getText().toString());
+                    userInfo.age = Integer.valueOf(ageEt.getText().toString());
                 }
-                if (TextUtils.isEmpty(nickTv.getText().toString())) {
+                if (TextUtils.isEmpty(nickEt.getText().toString())) {
                     userInfo.nick = getActivity().getResources().getString(R.string.register_nick);
                 } else {
-                    userInfo.nick = nickTv.getText().toString();
+                    userInfo.nick = nickEt.getText().toString();
                 }
-                if (TextUtils.isEmpty(professionTv.getText().toString())) {
+                if (TextUtils.isEmpty(professionEt.getText().toString())) {
                     userInfo.profession = getActivity().getResources().getString(
                             R.string.register_profession);
                 } else {
-                    userInfo.profession = professionTv.getText().toString();
+                    userInfo.profession = professionEt.getText().toString();
                 }
                 DoingApplication.getInstance().saveUserinfo(userInfo);
-                uploadUserInfo();*/
+//                uploadUserInfo();
             }
         });
         return mView;
@@ -245,5 +255,17 @@ public class RegisterInfoFragment extends BaseFragment {
     public void onDestroy() {
         super.onDestroy();
         QEventBus.getEventBus(DoingActivity.class.getName()).unregister(this);
+    }
+
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+            EditText etV=(EditText)v;
+            if (!hasFocus) {// 失去焦点
+                etV.setHint(etV.getTag().toString());
+            } else {
+                String hint=etV.getHint().toString();
+                etV.setTag(hint);
+                etV.setHint("");
+            }
     }
 }

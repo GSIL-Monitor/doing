@@ -40,7 +40,7 @@ public class RegisterFragment extends BaseFragment {
      * 切换fragment
      * @param event
      */
-    public void onEventMainThread(ApplicationEvents.SwitchFragmentToRegister event) {
+    public void onEventMainThread(ApplicationEvents.SwitchFragmentToRegisterGender event) {
         switchToFragment(event.fragmentClass, event.addToBackStack);
     }
     @Override

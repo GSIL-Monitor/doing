@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/publish_bg"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/publish_bg"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/doing_theme_bg">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/publish_cancel"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="22dp"
+            android:text="取消"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/publish_pulish"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="22dp"
+            android:text="发布"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="144dp"
+        android:background="@color/white"
+        android:paddingBottom="17dp"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp">
+
+        <EditText
+            android:id="@+id/publish_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:lineSpacingExtra="4dp"
+            android:maxLength="36"
+            android:paddingBottom="14dp"
+            android:paddingTop="26dp"
+            android:textColor="#949494"
+            android:text="我正在"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/publish_image1"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_below="@+id/publish_text"
+            android:scaleType="centerCrop"
+            android:src="@drawable/publish_camera" />
+
+        <ImageView
+            android:id="@+id/publish_image2"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:visibility="gone"
+            android:layout_below="@+id/publish_text"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/publish_image1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/publish_camera" />
+
+        <ImageView
+            android:id="@+id/publish_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/publish_image1"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="20dp"
+            android:background="#fbfbfb" />
+
+        <TextView
+            android:id="@+id/publish_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/publish_divider"
+            android:drawableLeft="@drawable/location"
+            android:drawablePadding="5dp"
+            android:text="北京朝阳区"
+            android:textColor="#d9d9da"
+            android:textSize="9sp" />
+    </RelativeLayout>
+
+
+</FrameLayout>

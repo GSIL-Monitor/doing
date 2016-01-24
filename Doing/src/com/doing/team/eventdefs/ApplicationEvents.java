@@ -93,12 +93,12 @@ public class ApplicationEvents {
 	/**
 	 * 切换注册页Fragment
 	 */
-	public static class SwitchFragmentToRegister {
+	public static class SwitchFragmentToRegisterGender {
 		public Class<? extends Fragment> fragmentClass;
 		public boolean addToBackStack;
 
-		public SwitchFragmentToRegister(Class<? extends Fragment> fragmentClass,
-								boolean addToBackStack) {
+		public SwitchFragmentToRegisterGender(Class<? extends Fragment> fragmentClass,
+											  boolean addToBackStack) {
 			this.fragmentClass = fragmentClass;
 			this.addToBackStack = addToBackStack;
 		}

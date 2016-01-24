@@ -50,6 +50,6 @@ public class RegisterGenderFragment extends BaseFragment implements View.OnClick
                 break;
         }
         DoingApplication.getInstance().saveUserinfo(mUserInfo);
-        QEventBus.getEventBus().post(new ApplicationEvents.SwitchFragmentToRegister(RegisterInfoFragment.class, false));
+        QEventBus.getEventBus().post(new ApplicationEvents.SwitchFragmentToRegisterGender(RegisterInfoFragment.class, false));
     }
 }

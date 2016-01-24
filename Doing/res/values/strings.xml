@@ -8,11 +8,6 @@
     <string name="exit">退出</string>
     <string name="skipe">跳过</string>
     <string name="enter_again_and_exit">再按一次退出</string>
-    <string name="guide_protocol">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;请务必认真阅读和理解本《软件使用许可协议》（以下简称《协议》）中规定的所有权利和限制。除非您接受本《协议》条款，否则您无权下载、安装或使用本"软件"及其相关服务。您一旦安装、复制、下载、访问或以其它方式使用本软件产品，将视为对本《协议》的接受，即表示您同意接受本《协议》各项条款的约束。\n</string>
-    <string name="service_protocol">软件使用许可协议</string>
-    <string name="user_help">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;欢迎您加入“身边生活(安卓版)用户体验改进计划”，为了改善产品的用户体验，身边生活(安卓版)会对产品的各功能使用情况进行统计，我们可以通过分析统计数据持续不断地提升产品操作体验、运行性能，改善功能设计等，并且推出对用户有帮助的创新安全服务。在统计时，我们只对身边生活(安卓版)产品自身的内容进行统计，绝不涉及用户的个人隐私数据。\n</string>
-    <string name="want_to_experence">我愿意参加用户体验改进计划</string>
-    <string name="app_use_protocol">身边生活协议</string>
     <!--注册页-->
     <string name="register_nick">抠脚女汉子</string>
     <string name="register_profession">无业游民</string>
@@ -29,4 +24,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_feedback">FeedbackActivity</string>
+    
+    <!--首页列表页-->
+    <string name="content_just_now">刚刚</string>
 </resources>

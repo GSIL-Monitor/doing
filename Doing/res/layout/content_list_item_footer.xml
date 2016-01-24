@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingBottom="11dp"
+    android:paddingTop="10dp">
+
+
+    <TextView
+        android:id="@+id/content_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/location"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:text="北京朝阳区"
+        android:textColor="@color/content_list_location"
+        android:textSize="@dimen/content_location" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:id="@+id/content_distance_layout"
+        android:visibility="invisible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:text="与我相距"
+            android:textColor="@color/content_list_location"
+            android:textSize="@dimen/content_location" />
+        <TextView
+            android:id="@+id/content_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200"
+            android:textColor="#FA844F"
+            android:textSize="@dimen/content_location" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="公里"
+            android:textColor="@color/content_list_location"
+            android:textSize="@dimen/content_location" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/comment" />
+
+    <TextView
+        android:id="@+id/content_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:text="12"
+        android:textColor="@color/content_list_comments"
+        android:textSize="@dimen/content_comments" />
+
+
+</LinearLayout>

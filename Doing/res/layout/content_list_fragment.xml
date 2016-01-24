@@ -7,42 +7,71 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/orange">
+        android:layout_height="@dimen/title_height"
+        android:background="@color/doing_theme_bg">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:text="在干嘛"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
     </RelativeLayout>
 
     <com.doing.team.pulltorefresh.PullToRefreshListView
+        android:id="@+id/content_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/content_list">
+        android:cacheColorHint="#00000000"
+        android:divider="#F8F8F8"
+        android:dividerHeight="10dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true">
 
     </com.doing.team.pulltorefresh.PullToRefreshListView>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
-        android:background="@color/orange">
+        android:layout_height="@dimen/title_height"
+        android:background="#e1e1e1">
+
         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="#e1e1e1" />
+
+        <ImageView
+            android:id="@+id/my_news_imag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/content_list_img1"/>
+            android:layout_centerVertical="true"
+            android:paddingLeft="48dp"
+            android:paddingRight="30dp"
+            android:src="@drawable/my_news_selector" />
+
         <ImageView
+            android:id="@+id/publish_camera_imag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/content_list_camera"/>
+            android:layout_centerInParent="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:src="@drawable/publish_button" />
+
         <ImageView
+            android:id="@+id/personal_imag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/content_list_img3"/>
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="48dp"
+            android:src="@drawable/persanal_selector" />
+    </RelativeLayout>
 </LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingLeft="22dp"
+    android:paddingRight="22dp">
+    <include layout="@layout/content_list_item_title"/>
+    <ImageView
+        android:layout_width="@dimen/content_one_horizontal_image_width"
+        android:layout_height="@dimen/content_one_vertival_image_width_height"
+        android:src="@drawable/ex_horizontal"
+        android:scaleType="centerCrop"
+        android:id="@+id/content_image"/>
+    <include layout="@layout/content_list_item_footer"/>
+</LinearLayout>
