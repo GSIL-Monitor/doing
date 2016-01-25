@@ -104,6 +104,15 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
+        <activity
+            android:name="com.doing.team.activity.ContentDetailActivity"
+            android:clearTaskOnLaunch="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
 
     </application>
 

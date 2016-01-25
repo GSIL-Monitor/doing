@@ -6,14 +6,17 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.doing.team.DoingApplication;
 import com.doing.team.R;
+import com.doing.team.activity.ContentDetailActivity;
 import com.doing.team.activity.PublishActivity;
 import com.doing.team.adapter.ContentListAdapter;
+import com.doing.team.properties.Constant;
 import com.doing.team.pulltorefresh.PullToRefreshBase;
 import com.doing.team.pulltorefresh.PullToRefreshListView;
 import com.qihoo.haosou.msearchpublic.util.Log;
@@ -51,12 +54,37 @@ public class ContentListFragment extends BaseFragment implements View.OnClickLis
 
 
         list = new ArrayList<View>();
+        view1.setTag(1);
+        view2.setTag(2);
+        view3.setTag(3);
         list.add(view1);
         list.add(view2);
         list.add(view3);
         listAdapter = new ContentListAdapter(list);
-        refreshList.setAdapter(listAdapter);
-//        mListView.setAdapter(listAdapter);
+//        refreshList.setAdapter(listAdapter);
+        mListView.setAdapter(listAdapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch ((Integer)view.getTag()){
+                    case 1:
+                        Intent intent1 = new Intent(getActivity(), ContentDetailActivity.class);
+                        intent1.putExtra(Constant.IMAGE_TYPE,Constant.HORIZONTAL_IMAGE);
+                        getActivity().startActivity(intent1);
+                        break;
+                    case 2:
+                        Intent intent2 = new Intent(getActivity(), ContentDetailActivity.class);
+                        intent2.putExtra(Constant.IMAGE_TYPE,Constant.VERTICAL_IMAGE);
+                        getActivity().startActivity(intent2);
+                        break;
+                    case 3:
+                        Intent intent3 = new Intent(getActivity(), ContentDetailActivity.class);
+                        intent3.putExtra(Constant.IMAGE_TYPE,Constant.DOUBLE_IMAGE);
+                        getActivity().startActivity(intent3);
+                        break;
+                }
+            }
+        });
         return mView;
     }
 
@@ -87,26 +115,28 @@ public class ContentListFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onPullDownToRefresh(final PullToRefreshBase refreshView) {
         Log.i("wzh", "dowm");
-
+        final View view = View.inflate(DoingApplication.getInstance(), R.layout.content_list_one_horizontal_image_item,null);
+        view.setTag(1);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                list.add(view3);
+                list.add(0, view);
                 listAdapter.notifyDataSetChanged();
                 refreshView.onRefreshComplete();
             }
-        },500);
+        }, 500);
 
     }
 
     @Override
     public void onPullUpToRefresh(final PullToRefreshBase refreshView) {
         Log.i("wzh", "up");
-
+        final View view = View.inflate(DoingApplication.getInstance(), R.layout.content_list_one_vertical_image_item, null);
+        view.setTag(2);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                list.add(view1);
+                list.add(view);
                 listAdapter.notifyDataSetChanged();
                 refreshView.onRefreshComplete();
             }

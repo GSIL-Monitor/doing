@@ -9,9 +9,9 @@ import java.util.List;
 /**
  * Created by wangzhiheng on 2016/1/24.
  */
-public class ContentDetailComment extends BaseAdapter {
+public class ContentDetailCommentAdapter extends BaseAdapter {
     private List<View> list;
-    public ContentDetailComment(List<View> list){
+    public ContentDetailCommentAdapter(List<View> list){
         this.list = list;
     }
 
