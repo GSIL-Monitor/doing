@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,6 +31,8 @@ public class ContentDetailActivity extends Activity implements View.OnClickListe
     private View horizontalImageView;
     private View verticalImageView;
     private View doubleImageView;
+    private LinearLayout contentDistanceLayout;
+    private TextView contentDistance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +43,13 @@ public class ContentDetailActivity extends Activity implements View.OnClickListe
         doubleImageView = findViewById(R.id.content_ditail_double);
         back = findViewById(R.id.content_detail_back);
         report = findViewById(R.id.content_detail_report);
+        contentDistanceLayout = (LinearLayout) findViewById(R.id.content_distance_layout);
+        contentDistance = (TextView) findViewById(R.id.content_distance);
         listView = (ListView) findViewById(R.id.content_detail_comment_detail);
         comments = (TextView) findViewById(R.id.content_detail_comments);
         replyText = (EditText) findViewById(R.id.content_detail_reply_text);
         commit = (TextView) findViewById(R.id.content_detail_reply_commit);
+        contentDistanceLayout.setVisibility(View.VISIBLE);
         back.setOnClickListener(this);
         commit.setOnClickListener(this);
         list = new ArrayList<View>();
@@ -79,7 +85,7 @@ public class ContentDetailActivity extends Activity implements View.OnClickListe
             case R.id.content_detail_reply_commit:
                 View view = View.inflate(this,R.layout.content_list_item_title,null);
                 TextView tv = (TextView) view.findViewById(R.id.content_title);
-                tv.setText(replyText.getText());
+                tv.setText(getResources().getString(R.string.doing) + replyText.getText());
                 list.add(view);
                 listAdapter.notifyDataSetChanged();
                 comments.setText(list.size()+"");

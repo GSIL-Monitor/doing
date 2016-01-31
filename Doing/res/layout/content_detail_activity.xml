@@ -39,6 +39,8 @@
             android:paddingRight="20dp"
             android:paddingTop="10dp"
             android:text="…"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/title_text_size"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -99,8 +101,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="9dp"
         android:layout_marginRight="9dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
         android:layout_weight="1"
         android:cacheColorHint="#00000000"
+        android:background="@color/white"
         android:divider="#F8F8F8"
         android:dividerHeight="9dp"
         android:fadingEdge="none"
@@ -124,9 +129,9 @@
             android:id="@+id/content_detail_reply_text"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:background="@drawable/transparent_layout_shape"
+            android:background="@null"
             android:gravity="center_vertical|left"
-            android:hint="我也想说两句..."
+            android:hint="我有话要说..."
             android:paddingLeft="10dp"
             android:textColor="@color/content_detail_reply"
             android:textSize="@dimen/content_detail_reply" />
@@ -145,7 +150,7 @@
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
             android:padding="10dp"
-            android:text="回答"
+            android:text="回复"
             android:textColor="@color/content_detail_reply"
             android:textSize="@dimen/content_detail_reply" />
 

@@ -14,7 +14,7 @@
         android:smallScreens="true" />
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="11"
         android:targetSdkVersion="17" />
 
     <!-- 权限配置 -->
@@ -110,7 +110,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
 

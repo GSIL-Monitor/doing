@@ -12,20 +12,18 @@
         android:background="@color/doing_theme_bg"
         android:orientation="horizontal" >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="22dp"
-            android:src="@drawable/back" />
-
         <TextView
+            android:drawableLeft="@drawable/back"
+            android:drawablePadding="9dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:paddingLeft="9dp"
+            android:layout_marginLeft="22dp"
             android:text="注册"
-            android:textColor="@color/white" />
+            android:gravity="center_vertical"
+            android:textSize="@dimen/title_text_size"
+            android:textColor="@color/white"
+            android:background="@drawable/title_image_selector"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -80,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="25dp"
                 android:text="昵称"
                 android:textSize="@dimen/register_info_text_size"
                 android:textColor="@color/register_info_text" />
@@ -94,14 +92,14 @@
                 android:textSize="@dimen/register_info_text_size"
                 android:background="@null"
                 android:layout_centerVertical="true"
-                android:gravity="right|center_vertical"
+                android:gravity="left|center_vertical"
                 android:textColor="@color/register_info_hint_text"
                 android:hint="@string/register_nick"
                 android:textColorHint="@color/register_info_hint_text"
                 android:maxLength="6" />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/divider_line"
                 android:background="@color/register_divider"
                 android:layout_alignParentBottom="true"/>
         </RelativeLayout>
@@ -118,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="25dp"
                 android:text="年龄"
                 android:textSize="@dimen/register_info_text_size"
                 android:textColor="@color/register_info_text" />
@@ -132,7 +130,7 @@
                 android:textSize="@dimen/register_info_text_size"
                 android:background="@null"
                 android:layout_centerVertical="true"
-                android:gravity="right|center_vertical"
+                android:gravity="left|center_vertical"
                 android:textColor="@color/register_info_hint_text"
                 android:ems="2"
                 android:hint="@string/register_age"
@@ -141,7 +139,7 @@
                 android:phoneNumber="true" />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/divider_line"
                 android:background="@color/register_divider"
                 android:layout_alignParentBottom="true"/>
         </RelativeLayout>
@@ -158,8 +156,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:text="年龄"
+                android:layout_marginRight="25dp"
+                android:text="职业"
                 android:textSize="@dimen/register_info_text_size"
                 android:textColor="@color/register_info_text" />
 
@@ -172,14 +170,14 @@
                 android:textSize="@dimen/register_info_text_size"
                 android:background="@null"
                 android:layout_centerVertical="true"
-                android:gravity="right|center_vertical"
+                android:gravity="left|center_vertical"
                 android:textColor="@color/register_info_hint_text"
                 android:textColorHint="@color/register_info_hint_text"
                 android:hint="@string/register_profession"
                 android:maxLength="6"/>
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/divider_line"
                 android:background="@color/register_divider"
                 android:layout_alignParentBottom="true"/>
         </RelativeLayout>

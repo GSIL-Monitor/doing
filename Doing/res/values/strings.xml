@@ -27,4 +27,6 @@
     
     <!--首页列表页-->
     <string name="content_just_now">刚刚</string>
+    <!--发布页-->
+    <string name="doing">我正在</string>
 </resources>

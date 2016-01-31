@@ -16,6 +16,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:text="在干嘛"
+            android:textSize="@dimen/title_text_size"
             android:textColor="@color/white" />
     </RelativeLayout>
 
@@ -38,11 +39,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="#e1e1e1">
+        android:background="#f8f8f8">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/divider_line"
             android:layout_alignParentTop="true"
             android:background="#e1e1e1" />
 

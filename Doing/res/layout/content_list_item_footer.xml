@@ -15,7 +15,6 @@
         android:drawableLeft="@drawable/location"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
-        android:paddingLeft="5dp"
         android:text="北京朝阳区"
         android:textColor="@color/content_list_location"
         android:textSize="@dimen/content_location" />

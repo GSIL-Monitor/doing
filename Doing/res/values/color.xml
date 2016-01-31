@@ -5,10 +5,12 @@
     <color name="dark_gray">#666666</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
+    <color name="divider_line">#e1e1e1</color>
     <color name="doing_theme_bg">#FA7C42</color>
     <color name="register_info_text">#0a0a0a</color>
     <color name="register_info_hint_text">#a1a1a1</color>
     <color name="register_divider">#e0e0e0</color>
+    <color name="title_press">#fafafa</color>
 
     <!--首页内容列表页-->
     <color name="content_list_name">#333333</color>

@@ -51,7 +51,7 @@ public class InputTool {
                     m.hideSoftInputFromWindow(editText.getWindowToken(), 0);
                 }
             }
-        }, 500);
+        }, 300);
     }
 
     //通过定时器强制隐藏虚拟键盘

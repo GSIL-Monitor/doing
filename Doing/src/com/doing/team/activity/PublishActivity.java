@@ -1,24 +1,34 @@
 package com.doing.team.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.doing.team.R;
+import com.doing.team.util.BlurImage;
 import com.doing.team.util.ImageUtils;
 import com.doing.team.util.InputTool;
+
 
 /**
  * Created by wangzhiheng on 2016/1/24.
  */
 public class PublishActivity extends Activity implements View.OnClickListener {
-    private EditText publishText;
+    private EditText publishEditText;
     private ImageView image1;
     private ImageView image2;
     private TextView location;
@@ -30,9 +40,9 @@ public class PublishActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        showImagePickDialog();
+        ImageUtils.openCameraImage(PublishActivity.this);
         setContentView(R.layout.publish_activity);
-        publishText = (EditText) findViewById(R.id.publish_text);
+        publishEditText = (EditText) findViewById(R.id.publish_text);
         image1 = (ImageView) findViewById(R.id.publish_image1);
         image2 = (ImageView) findViewById(R.id.publish_image2);
         location = (TextView) findViewById(R.id.publish_location);
@@ -50,11 +60,11 @@ public class PublishActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.publish_image1:
                 whichImage = 1;
-                showImagePickDialog();
+                ImageUtils.openCameraImage(PublishActivity.this);
                 break;
             case R.id.publish_image2:
                 whichImage = 2;
-                showImagePickDialog();
+                ImageUtils.openCameraImage(PublishActivity.this);
                 break;
             case R.id.publish_cancel:
                 finish();
@@ -64,26 +74,6 @@ public class PublishActivity extends Activity implements View.OnClickListener {
         }
     }
 
-    // 获取照片
-    public void showImagePickDialog() {
-        String title = "获取图片的方式";
-        String[] choices = new String[]{"拍照", "从手机中选择"};
-
-        new AlertDialog.Builder(this).setTitle(title)
-                .setItems(choices, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        switch (which) {
-                            case 0:
-                                ImageUtils.openCameraImage(PublishActivity.this);
-                                break;
-                            case 1:
-                                ImageUtils.openLocalImage(PublishActivity.this);
-                                break;
-                        }
-                    }
-                }).setNegativeButton("返回", null).show();
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -102,36 +92,32 @@ public class PublishActivity extends Activity implements View.OnClickListener {
                     // iv.setImageURI(ImageUtils.imageUriFromCamera);
 
                     // 对图片进行裁剪
-                    ImageUtils.cropImage(this, ImageUtils.imageUriFromCamera);
-                    break;
-                }
+//                    ImageUtils.cropImage(this, ImageUtils.imageUriFromCamera);
 
-                break;
-            // 手机相册获取图片
-            case ImageUtils.GET_IMAGE_FROM_PHONE:
-                if (data != null && data.getData() != null) {
-                    // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
-                    // iv.setImageURI(data.getData());
-
-                    // 对图片进行裁剪
-                    ImageUtils.cropImage(this, data.getData());
-                }
-                break;
-            // 裁剪图片后结果
-            case ImageUtils.CROP_IMAGE:
-                if (ImageUtils.cropImageUri != null) {
-                    // 可以直接显示图片,或者进行其他处理(如压缩等)
                     if (whichImage == 1) {
-                        image1.setImageURI(ImageUtils.cropImageUri);
+                        image1.setImageURI(ImageUtils.imageUriFromCamera);
                         image2.setVisibility(View.VISIBLE);
                     } else if (whichImage == 2) {
-                        image2.setImageURI(ImageUtils.cropImageUri);
+                        image2.setImageURI(ImageUtils.imageUriFromCamera);
                     }
-                    publishBackground.setImageURI(ImageUtils.cropImageUri);
+                    InputTool.KeyBoard(publishEditText,true);
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            BitmapFactory.Options optins = new BitmapFactory.Options();
+                            optins.outHeight = publishBackground.getMeasuredHeight();
+                            optins.outWidth = publishBackground.getMeasuredWidth();
+                            Bitmap backImage = BitmapFactory.decodeFile(getRealFilePath(ImageUtils.imageUriFromCamera), optins);
+                            Drawable blurImage = BlurImage.BoxBlurFilter(backImage);
+                            Message message = new Message();
+                            message.what = 23;
+                            message.obj = blurImage;
+                            handler.sendMessage(message);
+                            backImage.recycle();
+                        }
+                    }).start();
 
-
-                    publishText.setSelection(3);
-                    InputTool.KeyBoard(publishText, true);
+                    break;
                 }
                 break;
             default:
@@ -140,9 +126,45 @@ public class PublishActivity extends Activity implements View.OnClickListener {
 
     }
 
+    public String getRealFilePath(final Uri uri) {
+        if (null == uri) return null;
+        final String scheme = uri.getScheme();
+        String data = null;
+        if (scheme == null)
+            data = uri.getPath();
+        else if (ContentResolver.SCHEME_FILE.equals(scheme)) {
+            data = uri.getPath();
+        } else if (ContentResolver.SCHEME_CONTENT.equals(scheme)) {
+            Cursor cursor = this.getContentResolver().query(uri, new String[]{MediaStore.Images.ImageColumns.DATA}, null, null, null);
+            if (null != cursor) {
+                if (cursor.moveToFirst()) {
+                    int index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                    if (index > -1) {
+                        data = cursor.getString(index);
+                    }
+                }
+                cursor.close();
+            }
+        }
+        return data;
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        InputTool.KeyBoard(publishText, false);
+        InputTool.KeyBoard(publishEditText, false);
     }
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == 23) {
+                if (msg.obj != null)
+                    publishBackground.setImageDrawable((Drawable) msg.obj);
+            }
+        }
+    };
+
+
 }
