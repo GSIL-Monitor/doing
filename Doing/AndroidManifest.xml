@@ -113,6 +113,13 @@
             android:windowSoftInputMode="adjustUnspecified|stateHidden"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
+        <activity
+            android:name="com.doing.team.activity.ZoomImageActivity"
+            android:clearTaskOnLaunch="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
 
     </application>
 
