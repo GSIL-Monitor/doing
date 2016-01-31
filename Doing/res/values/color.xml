@@ -24,8 +24,10 @@
     <color name="content_list_divider">#f0f0f0</color>
 
     <!--详情页-->
-    <color name="content_detail_reply">#c2c2c2</color>
+    <color name="content_detail_reply_hint">#c2c2c2</color>
     <color name="content_detail_commit">#9c9c9c</color>
+    <color name="content_detail_list_name">#333333</color>
+    <color name="content_detail_list_title">#808080</color>
 
    
    

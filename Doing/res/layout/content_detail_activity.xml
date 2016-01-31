@@ -48,18 +48,21 @@
         android:id="@+id/content_ditail_double"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         layout="@layout/content_list_double_image_item" />
 
     <include
         android:id="@+id/content_ditail_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         layout="@layout/content_list_one_horizontal_image_item" />
 
     <include
         android:id="@+id/content_ditail_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         layout="@layout/content_list_one_vertical_image_item" />
 
     <LinearLayout
@@ -101,8 +104,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="9dp"
         android:layout_marginRight="9dp"
-        android:paddingLeft="13dp"
-        android:paddingRight="13dp"
         android:layout_weight="1"
         android:cacheColorHint="#00000000"
         android:background="@color/white"
@@ -132,8 +133,9 @@
             android:background="@null"
             android:gravity="center_vertical|left"
             android:hint="我有话要说..."
+            android:textColorHint="@color/content_detail_reply_hint"
             android:paddingLeft="10dp"
-            android:textColor="@color/content_detail_reply"
+			android:textColor="@color/content_detail_list_title"
             android:textSize="@dimen/content_detail_reply" />
 
         <ImageView
@@ -151,7 +153,7 @@
             android:gravity="center_vertical"
             android:padding="10dp"
             android:text="回复"
-            android:textColor="@color/content_detail_reply"
+            android:textColor="@color/content_detail_list_title"
             android:textSize="@dimen/content_detail_reply" />
 
 

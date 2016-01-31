@@ -59,8 +59,8 @@ public class ContentListFragment extends BaseFragment implements View.OnClickLis
         info2.imageTypy = Constant.VERTICAL_IMAGE;
         info3.imageTypy = Constant.HORIZONTAL_IMAGE;
         infos.add(info1);
-        infos.add(info2);
-        infos.add(info3);
+//        infos.add(info2);
+//        infos.add(info3);
 
         listAdapter = new ContentListAdapter(getActivity());
         listAdapter.setListInfos(infos);

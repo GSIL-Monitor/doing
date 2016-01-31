@@ -32,5 +32,7 @@
     <!--详情页-->
     <dimen name="content_detail_reply">11dp</dimen>
     <dimen name="content_detail_commit">12dp</dimen>
+    <dimen name="content_detail_name">15sp</dimen>
+    <dimen name="content_detail_title">11sp</dimen>
 
 </resources>

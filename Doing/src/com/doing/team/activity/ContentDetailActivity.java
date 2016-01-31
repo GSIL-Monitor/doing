@@ -52,7 +52,7 @@ public class ContentDetailActivity extends Activity implements View.OnClickListe
         back.setOnClickListener(this);
         commit.setOnClickListener(this);
         list = new ArrayList<View>();
-        View view = View.inflate(this, R.layout.content_list_item_title, null);
+        View view = View.inflate(this, R.layout.content_detail_comment_item, null);
         list.add(view);
         listAdapter = new ContentDetailCommentAdapter(list);
         listView.setAdapter(listAdapter);
@@ -91,7 +91,7 @@ public class ContentDetailActivity extends Activity implements View.OnClickListe
                 finish();
                 break;
             case R.id.content_detail_reply_commit:
-                View view = View.inflate(this, R.layout.content_list_item_title, null);
+                View view = View.inflate(this, R.layout.content_detail_comment_item, null);
                 TextView tv = (TextView) view.findViewById(R.id.content_title);
                 tv.setText(getResources().getString(R.string.doing) + replyText.getText());
                 list.add(view);
